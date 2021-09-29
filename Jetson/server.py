@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask # Flask web app - http://home:5000
 import smbus
 
 DEVICE_BUS = 1
