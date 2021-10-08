@@ -11,7 +11,6 @@ const Sidebar = () => {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Rooms</h3>
                     <ul className="sidebarList">
-                        
                         <li className="sidebarListItem">
                             <LineStyle />
                             Room: 1
@@ -20,7 +19,6 @@ const Sidebar = () => {
                             <LineStyle />
                             Room: 2
                         </li>
-                    
                     </ul>
                     <h3 className="sidebarTitle">Profile</h3>
                     <ul className="sidebarList">
