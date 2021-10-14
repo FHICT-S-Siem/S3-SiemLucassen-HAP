@@ -66,7 +66,7 @@ class SensorDataPublisher(Thread):
           'temperature': temperature,
           'brightness': brightness,
           'datetime': timestamp,
-          'room': 'mario'
+          'room': 'siem'
       }
       json_data = json.dumps(data, indent=4)
       self.channel.basic_publish(
