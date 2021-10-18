@@ -1,6 +1,8 @@
 package com.sensor.Sensor_API.room;
 
 import javax.persistence.*;
+import java.util.Date;
+
 
 @Entity
 @Table
@@ -17,18 +19,21 @@ public class Room {
             generator = "room_sequence"
     )
     private Integer id;
-    private String name;
+    private String room;
+    private Integer brightness;
+    private Integer temperature;
+    private Date datetime;
 
     public Room() {
     }
 
     public Room(String name) {
-        this.name = name;
+        this.room = name;
     }
 
     public Room(Integer id, String name) {
         this.id = id;
-        this.name = name;
+        this.room = name;
     }
 
     public Integer getId() {
@@ -39,11 +44,43 @@ public class Room {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getRoom() {
+        return room;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setRoom(String name) {
+        this.room = name;
+    }
+
+    public Integer getBrightness() {
+        return brightness;
+    }
+
+    public void setBrightness(Integer brightness) {
+        this.brightness = brightness;
+    }
+
+    public Integer getTemperature() {
+        return temperature;
+    }
+
+    public Room(Integer id, String name, Integer brightness, Integer temperature, Date date) {
+        this.id = id;
+        this.room = name;
+        this.brightness = brightness;
+        this.temperature = temperature;
+        this.datetime = date;
+    }
+
+    public void setTemperature(Integer temperature) {
+        this.temperature = temperature;
+    }
+
+    public Date getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(Date date) {
+        this.datetime = date;
     }
 }

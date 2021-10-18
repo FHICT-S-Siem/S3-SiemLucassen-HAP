@@ -18,6 +18,11 @@ COPY server.py server.py
 # expose the port for manually fetching sensor data.
 EXPOSE 5000
 ENV FLASK_APP=server.py
+
+ARG ROOM=mario
+
+ENV ROOM=$ROOM
+
 # entrypoint for the python code.
 # ENTRYPOINT [ "python3", "-m", "flask", "run", "--host=0.0.0.0", "--port=5000" ]
 ENTRYPOINT [ "python3", "server.py" ]

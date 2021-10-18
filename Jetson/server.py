@@ -4,6 +4,7 @@ import pika
 from threading import Thread, Event
 from datetime import datetime
 import json
+import os
 
 DEVICE_BUS = 1
 DEVICE_ADDR = 0x17
@@ -26,10 +27,11 @@ bus = smbus.SMBus(DEVICE_BUS)
 
 app = Flask(__name__)
 
+room_name = os.environ.get('ROOM')
 
 @app.route("/")
 def index():
-    return "Welcome to the jetson nano sensor hub!<br>Try:<br>/temperature<br>/brightness"
+    return f"Welcome to the jetson nano sensor hub for {room_name} room!<br>Try:<br>/temperature<br>/brightness"
 
 
 @app.route("/temperature")
@@ -46,8 +48,9 @@ def get_brightness():
 
 
 class SensorDataPublisher(Thread):
-  def __init__(self):
+  def __init__(self, stopped):
       Thread.__init__(self)
+      self.stopped = stopped
       self.connection = pika.BlockingConnection(
           pika.ConnectionParameters(host='siemvm2'))
       self.channel = self.connection.channel()
@@ -66,9 +69,9 @@ class SensorDataPublisher(Thread):
           'temperature': temperature,
           'brightness': brightness,
           'datetime': timestamp,
-          'room': 'siem'
+          'room': room_name
       }
-      json_data = json.dumps(data, indent=4)
+      json_data = json.dumps(data)
       self.channel.basic_publish(
         exchange='', 
         routing_key='sensor_data',
@@ -77,7 +80,8 @@ class SensorDataPublisher(Thread):
 
 
 if __name__ == '__main__':
-    thread = SensorDataPublisher()
+    stopped = Event()
+    thread = SensorDataPublisher(stopped)
     thread.start()
     app.run(host="0.0.0.0", port="5000", debug=False, use_reloader=False)
 

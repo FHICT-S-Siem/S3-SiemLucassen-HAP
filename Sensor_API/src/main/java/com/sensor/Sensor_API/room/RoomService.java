@@ -26,7 +26,7 @@ public class RoomService {
     }
 
     public void createRoom(Room room) {
-        Optional<Room> roomByName = roomRepository.findRoomByName(room.getName());
+        Optional<Room> roomByName = roomRepository.findRoomByRoom(room.getRoom());
         if (roomByName.isPresent()) {
             throw new EntityExistsException("Name already taken!");
         }
@@ -37,7 +37,7 @@ public class RoomService {
         Optional<Room> optionalRoom = roomRepository.findById(id);
         if (optionalRoom.isPresent()) {
             Room actualRoom = optionalRoom.get();
-            actualRoom.setName(room.getName());
+            actualRoom.setRoom(room.getRoom());
             roomRepository.save(actualRoom);
             return true;
         }
@@ -48,6 +48,6 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> getRoomByName(String name) {return roomRepository.findRoomByName(name);}
+    public Optional<Room> getRoomByName(String name) {return roomRepository.findRoomByRoom(name);}
 
 }
