@@ -46,6 +46,5 @@ public class RabbitMQConfig {
         simpleMessageListenerContainer.setQueues(myQueue());
         simpleMessageListenerContainer.setMessageListener(new RabbitMQMessageListener(roomRepository));
         return simpleMessageListenerContainer;
-
     }
 }
