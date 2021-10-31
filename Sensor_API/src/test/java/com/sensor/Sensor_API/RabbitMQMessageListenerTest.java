@@ -13,12 +13,14 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.amqp.core.Message;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+@SpringBootTest
 @RunWith(MockitoJUnitRunner.class)
 public class RabbitMQMessageListenerTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
