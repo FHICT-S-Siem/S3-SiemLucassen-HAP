@@ -7,21 +7,16 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.sensor.Sensor_API.room.Room;
 import com.sensor.Sensor_API.room.RoomRepository;
 import com.sensor.Sensor_API.utils.RoomDeserializer;
-import org.junit.Test;
-import org.junit.Before;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.amqp.core.Message;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@RunWith(MockitoJUnitRunner.class)
 public class RabbitMQMessageListenerTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
 
@@ -29,7 +24,7 @@ public class RabbitMQMessageListenerTest {
 
     public RabbitMQMessageListener rabbitMQMessageListener;
 
-    @Before
+    @BeforeEach
     public void setUp() {
         SimpleModule module = new SimpleModule("RoomDeserializer", new Version(1, 0, 0, null, null, null));
         module.addDeserializer(Room.class, new RoomDeserializer());
