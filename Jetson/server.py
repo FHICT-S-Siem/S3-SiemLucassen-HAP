@@ -58,7 +58,7 @@ class SensorDataPublisher(Thread):
   
   # Publish sensor data every 5 seconds 
   def run(self):
-      while not self.stopped.wait(5):
+      while not self.stopped.wait(5*60):
           self.publish_sensor_data()
 
   def publish_sensor_data(self):

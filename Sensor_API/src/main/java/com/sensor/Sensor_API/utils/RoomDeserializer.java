@@ -10,6 +10,7 @@ import com.sensor.Sensor_API.room.Room;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class RoomDeserializer extends StdDeserializer<Room> {
     public static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -27,17 +28,18 @@ public class RoomDeserializer extends StdDeserializer<Room> {
         Room room = new Room();
         ObjectCodec codec = parser.getCodec();
         JsonNode node = codec.readTree(parser);
-
+        String date = node.get("datetime").asText();
         try {
             room.setRoom(node.get("room").asText());
             room.setBrightness(node.get("brightness").asInt());
             room.setTemperature(node.get("temperature").asInt());
-            room.setDatetime(FORMATTER.parse(node.get("datetime").asText()));
-            room.setRoom(node.get("room").asText());
+            room.setDatetime(FORMATTER.parse(date));
         } catch (ParseException e) {
-            e.printStackTrace();
+            if (room.getDatetime() == null)
+                room.setDatetime(new Date(Long.parseLong(date)));
+            else
+                e.printStackTrace();
         }
-
         return room;
     }
 }

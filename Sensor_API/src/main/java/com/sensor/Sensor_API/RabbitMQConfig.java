@@ -33,9 +33,9 @@ public class RabbitMQConfig {
 
     @Bean
     ConnectionFactory connectionFactory(){
-        CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory("siemvm2");
-        cachingConnectionFactory.setUsername("guest");
-        cachingConnectionFactory.setPassword("guest");
+        CachingConnectionFactory cachingConnectionFactory = new CachingConnectionFactory(System.getenv("HOST_URL"));
+        cachingConnectionFactory.setUsername(System.getenv("RMQ_USERNAME"));
+        cachingConnectionFactory.setPassword(System.getenv("RMQ_PASSWORD"));
         return cachingConnectionFactory;
     }
 
