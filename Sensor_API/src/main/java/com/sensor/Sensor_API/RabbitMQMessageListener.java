@@ -29,7 +29,7 @@ public class RabbitMQMessageListener implements MessageListener {
             System.out.println("message = " + messageString);
             _roomRepository.save(room);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            System.out.println(e.toString());
         }
     }
 }

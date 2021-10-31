@@ -38,7 +38,7 @@ public class RoomDeserializer extends StdDeserializer<Room> {
             if (room.getDatetime() == null)
                 room.setDatetime(new Date(Long.parseLong(date)));
             else
-                e.printStackTrace();
+                System.out.println(e.toString());
         }
         return room;
     }
