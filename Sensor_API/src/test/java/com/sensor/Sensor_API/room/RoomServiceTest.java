@@ -35,6 +35,21 @@ public class RoomServiceTest {
     }
 
     @Test
+    void Should_Get_Room_By_Name() {
+        // given
+        Room room = new Room(
+                1,
+                "Siem"
+        );
+
+        given(roomRepository.findRoomByRoom(room.getRoom())).willReturn(java.util.Optional.of(room));
+        // when
+        underTest.getRoomByName(room.getRoom());
+        // then
+        verify(roomRepository).findRoomByRoom(room.getRoom());
+    }
+
+    @Test
     void Should_Create_Room() {
         // given
         Room expected = new Room(
@@ -66,8 +81,8 @@ public class RoomServiceTest {
         underTest.deleteRoom(dishId);
         verify(roomRepository).deleteById(dishId);
     }
-
     //TODO: Fix unittest Should_Update_Room.
+
     @Test
     void Should_Update_Room() {
         // given
@@ -137,5 +152,4 @@ public class RoomServiceTest {
                 .isInstanceOf(ApiRequestException.class)
                 .hasMessageContaining("Room with id "+ roomId +" does not exist");
     }
-
 }

@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RoomDeserializer extends StdDeserializer<Room> {
-    public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //removed static because of sonarqube bug reliability reasons
 
     public RoomDeserializer() {
         this(null);
@@ -40,7 +40,7 @@ public class RoomDeserializer extends StdDeserializer<Room> {
                 room.setDatetime(new Date(Long.parseLong(date)));
             else
                 throw new ApiRequestException("Room datetime is null.", e);
-        } 
+        }
         return room;
     }
 }
