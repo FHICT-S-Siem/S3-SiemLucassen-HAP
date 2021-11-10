@@ -5,6 +5,7 @@ import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.sensor.Sensor_API.exceptions.ApiRequestException;
 import com.sensor.Sensor_API.room.Room;
 
 import java.io.IOException;
@@ -13,7 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class RoomDeserializer extends StdDeserializer<Room> {
-    public static final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     public RoomDeserializer() {
         this(null);
@@ -38,7 +39,7 @@ public class RoomDeserializer extends StdDeserializer<Room> {
             if (room.getDatetime() == null)
                 room.setDatetime(new Date(Long.parseLong(date)));
             else
-                System.out.println(e.toString());
+                throw new ApiRequestException("Room datetime is empty.", e);
         }
         return room;
     }

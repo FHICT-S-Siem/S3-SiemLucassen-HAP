@@ -86,7 +86,7 @@ public class RoomServiceTest {
         underTest.updateRoom(oldRoom.getId(), newRoom);
 
         // then
-        assertThat(underTest.getRoomByName(newRoom.getRoom())).isNotEqualTo(oldRoom);
+        assertThat(underTest.getRoomByName(newRoom.getRoom())).isNotEqualTo(oldRoom.getRoom());
     }
 
     @Test
