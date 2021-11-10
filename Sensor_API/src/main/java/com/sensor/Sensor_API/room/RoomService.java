@@ -1,5 +1,6 @@
 package com.sensor.Sensor_API.room;
 
+import com.sensor.Sensor_API.exceptions.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,29 +20,33 @@ public class RoomService {
     public void deleteRoom(Integer roomId) {
         boolean exists = roomRepository.existsById(roomId);
         if (!exists) {
-            throw new IllegalStateException("Room with id " + roomId + " does not exists");
+            throw new ApiRequestException("Room with id " + roomId + " does not exist");
         }
         roomRepository.deleteById(roomId);
-        System.out.println("room " + roomId + " deleted!");
+        System.out.println("Room " + roomId + " deleted!");
     }
 
     public void createRoom(Room room) {
         Optional<Room> roomByName = roomRepository.findRoomByRoom(room.getRoom());
         if (roomByName.isPresent()) {
-            throw new EntityExistsException("Name already taken!");
+            throw new ApiRequestException("Name already taken!");
         }
         roomRepository.save(room);
     }
 
     public boolean updateRoom(Integer id, Room room) {
-        Optional<Room> optionalRoom = roomRepository.findById(id);
-        if (optionalRoom.isPresent()) {
-            Room actualRoom = optionalRoom.get();
-            actualRoom.setRoom(room.getRoom());
-            roomRepository.save(actualRoom);
+        Optional<Room> oldRoomById = roomRepository.findById(id);
+        if (oldRoomById.isPresent()) {
+            Room newRoom = oldRoomById.get();
+            newRoom.setRoom(room.getRoom());
+            newRoom.setDatetime(room.getDatetime());
+            roomRepository.save(newRoom);
             return true;
         }
-        return false;
+        else
+        {
+            throw new ApiRequestException("Room does not exist with given id");
+        }
     }
 
     public List<Room> getRooms(){

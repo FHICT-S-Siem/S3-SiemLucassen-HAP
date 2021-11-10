@@ -51,4 +51,6 @@ public class RabbitMQMessageListenerTest {
         // Assert
         verify(_roomRepository, times(1)).save(any());
     }
+
+
 }

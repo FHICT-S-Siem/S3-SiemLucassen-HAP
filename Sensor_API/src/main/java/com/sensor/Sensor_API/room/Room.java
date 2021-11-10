@@ -36,6 +36,20 @@ public class Room {
         this.room = name;
     }
 
+    public Room(Integer id, String name, Date date) {
+        this.id = id;
+        this.room = name;
+        this.datetime = date;
+    }
+
+    public Room(Integer id, String room, Integer brightness, Integer temperature, Date datetime) {
+        this.id = id;
+        this.room = room;
+        this.brightness = brightness;
+        this.temperature = temperature;
+        this.datetime = datetime;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -62,14 +76,6 @@ public class Room {
 
     public Integer getTemperature() {
         return temperature;
-    }
-
-    public Room(Integer id, String name, Integer brightness, Integer temperature, Date date) {
-        this.id = id;
-        this.room = name;
-        this.brightness = brightness;
-        this.temperature = temperature;
-        this.datetime = date;
     }
 
     public void setTemperature(Integer temperature) {
