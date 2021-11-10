@@ -40,7 +40,7 @@ public class RoomDeserializer extends StdDeserializer<Room> {
                 room.setDatetime(new Date(Long.parseLong(date)));
             else
                 throw new ApiRequestException("Room datetime is null.", e);
-        }
+        } 
         return room;
     }
 }
