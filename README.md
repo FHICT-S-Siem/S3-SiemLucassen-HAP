@@ -1,5 +1,5 @@
 # S3-SiemLucassen-HAP
-Home assistant platform in React, Java Spring with Microservices and Python for the Jetson Nano scripts.
+Home assistant platform in React, Java Spring with microservice architecture and Python for the Jetson Nano scripts.
 
 ## Motivation
 
