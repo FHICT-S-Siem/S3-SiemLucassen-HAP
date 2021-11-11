@@ -1,6 +1,6 @@
 building the dockerfile
 ```
-cd 'C:\Users\siem2\Desktop\Fontys\Semester 3\IP\House Assistant Platform\S3-SiemLucassen-HAP\Jetson'
+cd 'C:\Users\Siem\Desktop\Fontys\Semester 3\IP\S3-SiemLucassen-HAP\Jetson'
 docker build -t siemvm2:5000/siemsensor -f .Dockerfile .
 docker push siemvm2:5000/siemsensor
 ```
