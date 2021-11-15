@@ -31,7 +31,7 @@ public class RoomDeserializer extends StdDeserializer<Room> {
         JsonNode node = codec.readTree(parser);
         String date = node.get("datetime").asText();
         try {
-            room.setRoom(node.get("room").asText());
+            room.setName(node.get("room").asText());
             room.setBrightness(node.get("brightness").asInt());
             room.setTemperature(node.get("temperature").asInt());
             room.setDatetime(FORMATTER.parse(date));

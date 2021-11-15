@@ -1,5 +1,8 @@
-package com.sensor.Sensor_API.room;
+package com.sensor.Sensor_API.unit;
 import com.sensor.Sensor_API.exceptions.ApiRequestException;
+import com.sensor.Sensor_API.room.Room;
+import com.sensor.Sensor_API.room.RoomRepository;
+import com.sensor.Sensor_API.room.RoomService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -42,11 +45,11 @@ public class RoomServiceTest {
                 "Siem"
         );
 
-        given(roomRepository.findRoomByRoom(room.getRoom())).willReturn(java.util.Optional.of(room));
+        given(roomRepository.findRoomByName(room.getName())).willReturn(java.util.Optional.of(room));
         // when
-        underTest.getRoomByName(room.getRoom());
+        underTest.getRoomByName(room.getName());
         // then
-        verify(roomRepository).findRoomByRoom(room.getRoom());
+        verify(roomRepository).findRoomByName(room.getName());
     }
 
     @Test
@@ -101,7 +104,7 @@ public class RoomServiceTest {
         underTest.updateRoom(oldRoom.getId(), newRoom);
 
         // then
-        assertThat(underTest.getRoomByName(newRoom.getRoom())).isNotEqualTo(oldRoom.getRoom());
+        assertThat(underTest.getRoomByName(newRoom.getName())).isNotEqualTo(oldRoom.getName());
     }
 
     @Test
@@ -132,7 +135,7 @@ public class RoomServiceTest {
         );
 
         // when
-        given(roomRepository.findRoomByRoom("Siem"))
+        given(roomRepository.findRoomByName("Siem"))
                 .willReturn(java.util.Optional.of(room));
         // then
         assertThatThrownBy(() -> underTest.createRoom(room))
