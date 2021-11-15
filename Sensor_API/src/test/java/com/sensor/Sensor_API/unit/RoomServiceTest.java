@@ -84,27 +84,28 @@ public class RoomServiceTest {
         underTest.deleteRoom(dishId);
         verify(roomRepository).deleteById(dishId);
     }
-    //TODO: Fix unittest Should_Update_Room.
 
     @Test
     void Should_Update_Room() {
         // given
-        Room oldRoom = new Room(
+        Room expected = new Room(
                 1,
-                "Mario"
-        );
-        Room newRoom= new Room(
-                1,
-                "Siem"
+                "siem"
         );
 
-        given(roomRepository.findById(oldRoom.getId()))
-                .willReturn(java.util.Optional.of(oldRoom));
+        given(roomRepository.findById(expected.getId())).willReturn(Optional.of(expected));
+
         //when
-        underTest.updateRoom(oldRoom.getId(), newRoom);
+        underTest.updateRoom(expected.getId(), expected);
+        ArgumentCaptor<Room> dishArgumentCaptor =
+                ArgumentCaptor.forClass(Room.class);
+        verify(roomRepository)
+                .save(dishArgumentCaptor.capture());
+
+        Room actual = dishArgumentCaptor.getValue();
 
         // then
-        assertThat(underTest.getRoomByName(newRoom.getName())).isNotEqualTo(oldRoom.getName());
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
