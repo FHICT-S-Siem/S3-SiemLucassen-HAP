@@ -38,7 +38,7 @@ public class RabbitMQMessageListenerTest {
         // Arrange
         Room room = new Room();
         room.setDatetime(new Date());
-        room.setRoom("Mario");
+        room.setName("Mario");
         room.setBrightness(5);
         room.setTemperature(25);
 

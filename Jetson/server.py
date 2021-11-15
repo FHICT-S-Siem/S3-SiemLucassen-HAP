@@ -56,9 +56,9 @@ class SensorDataPublisher(Thread):
       self.channel = self.connection.channel()
       self.channel.queue_declare(queue='sensor_data', durable=True)
   
-  # Publish sensor data every 5 seconds 
+  # Publish sensor data every 3 minutes 
   def run(self):
-      while not self.stopped.wait(5*60):
+      while not self.stopped.wait(3*60):
           self.publish_sensor_data()
 
   def publish_sensor_data(self):

@@ -10,16 +10,16 @@ public class Room {
 
     @Id
     @SequenceGenerator(
-            name = "room_sequence",
-            sequenceName = "room_sequence",
+            name = "name_sequence",
+            sequenceName = "name_sequence",
             allocationSize = 1
     )
     @GeneratedValue (
             strategy = GenerationType.SEQUENCE,
-            generator = "room_sequence"
+            generator = "name_sequence"
     )
     private Integer id;
-    private String room;
+    private String name;
     private Integer brightness;
     private Integer temperature;
     private Date datetime;
@@ -27,27 +27,16 @@ public class Room {
     public Room() {
     }
 
-    public Room(String name) {
-        this.room = name;
-    }
-
     public Room(Integer id, String name) {
         this.id = id;
-        this.room = name;
+        this.name = name;
     }
 
-    public Room(Integer id, String name, Date date) {
+    public Room(Integer id, String name, Integer brightness, Integer temperature) {
         this.id = id;
-        this.room = name;
-        this.datetime = date;
-    }
-
-    public Room(Integer id, String room, Integer brightness, Integer temperature, Date datetime) {
-        this.id = id;
-        this.room = room;
+        this.name = name;
         this.brightness = brightness;
         this.temperature = temperature;
-        this.datetime = datetime;
     }
 
     public Integer getId() {
@@ -58,12 +47,12 @@ public class Room {
         this.id = id;
     }
 
-    public String getRoom() {
-        return room;
+    public String getName() {
+        return name;
     }
 
-    public void setRoom(String name) {
-        this.room = name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getBrightness() {

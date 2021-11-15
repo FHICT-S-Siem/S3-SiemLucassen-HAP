@@ -1,10 +1,11 @@
 package com.sensor.Sensor_API.room;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sensor.Sensor_API.exceptions.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityExistsException;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,7 +28,7 @@ public class RoomService {
     }
 
     public void createRoom(Room room) {
-        Optional<Room> roomByName = roomRepository.findRoomByRoom(room.getRoom());
+        Optional<Room> roomByName = roomRepository.findRoomByName(room.getName());
         if (roomByName.isPresent()) {
             throw new ApiRequestException("Name already taken!");
         }
@@ -38,7 +39,7 @@ public class RoomService {
         Optional<Room> oldRoomById = roomRepository.findById(id);
         if (oldRoomById.isPresent()) {
             Room newRoom = oldRoomById.get();
-            newRoom.setRoom(room.getRoom());
+            newRoom.setName(room.getName());
             newRoom.setDatetime(room.getDatetime());
             roomRepository.save(newRoom);
             return true;
@@ -53,6 +54,15 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> getRoomByName(String name) {return roomRepository.findRoomByRoom(name);}
+    public Optional<Room> getRoomByName(String name) {
+
+        if (name.isEmpty())
+        {
+            throw new ApiRequestException("There are no rooms with this name found");
+        }
+        else {
+            return roomRepository.findRoomByName(name);
+        }
+    }
 
 }

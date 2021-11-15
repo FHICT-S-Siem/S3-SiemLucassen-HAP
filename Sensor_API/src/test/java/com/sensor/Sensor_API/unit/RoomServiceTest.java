@@ -1,5 +1,8 @@
-package com.sensor.Sensor_API.room;
+package com.sensor.Sensor_API.unit;
 import com.sensor.Sensor_API.exceptions.ApiRequestException;
+import com.sensor.Sensor_API.room.Room;
+import com.sensor.Sensor_API.room.RoomRepository;
+import com.sensor.Sensor_API.room.RoomService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -42,11 +45,11 @@ public class RoomServiceTest {
                 "Siem"
         );
 
-        given(roomRepository.findRoomByRoom(room.getRoom())).willReturn(java.util.Optional.of(room));
+        given(roomRepository.findRoomByName(room.getName())).willReturn(java.util.Optional.of(room));
         // when
-        underTest.getRoomByName(room.getRoom());
+        underTest.getRoomByName(room.getName());
         // then
-        verify(roomRepository).findRoomByRoom(room.getRoom());
+        verify(roomRepository).findRoomByName(room.getName());
     }
 
     @Test
@@ -81,27 +84,28 @@ public class RoomServiceTest {
         underTest.deleteRoom(dishId);
         verify(roomRepository).deleteById(dishId);
     }
-    //TODO: Fix unittest Should_Update_Room.
 
     @Test
     void Should_Update_Room() {
         // given
-        Room oldRoom = new Room(
+        Room expected = new Room(
                 1,
-                "Mario"
-        );
-        Room newRoom= new Room(
-                1,
-                "Siem"
+                "siem"
         );
 
-        given(roomRepository.findById(oldRoom.getId()))
-                .willReturn(java.util.Optional.of(oldRoom));
+        given(roomRepository.findById(expected.getId())).willReturn(Optional.of(expected));
+
         //when
-        underTest.updateRoom(oldRoom.getId(), newRoom);
+        underTest.updateRoom(expected.getId(), expected);
+        ArgumentCaptor<Room> dishArgumentCaptor =
+                ArgumentCaptor.forClass(Room.class);
+        verify(roomRepository)
+                .save(dishArgumentCaptor.capture());
+
+        Room actual = dishArgumentCaptor.getValue();
 
         // then
-        assertThat(underTest.getRoomByName(newRoom.getRoom())).isNotEqualTo(oldRoom.getRoom());
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
@@ -132,7 +136,7 @@ public class RoomServiceTest {
         );
 
         // when
-        given(roomRepository.findRoomByRoom("Siem"))
+        given(roomRepository.findRoomByName("Siem"))
                 .willReturn(java.util.Optional.of(room));
         // then
         assertThatThrownBy(() -> underTest.createRoom(room))
