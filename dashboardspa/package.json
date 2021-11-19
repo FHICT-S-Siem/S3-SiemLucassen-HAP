@@ -9,11 +9,13 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "homekit-react-components": "^0.0.1",
     "plotly.js": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-json-pretty": "^2.2.0",
     "react-plotly.js": "^2.5.1",
+    "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
     "recharts": "^2.1.4",
     "web-vitals": "^1.1.2"
@@ -41,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.3.0"
   }
 }

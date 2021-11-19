@@ -1,4 +1,4 @@
-package com.sensor.Sensor_API.exceptions;
+package com.sensor.sensor_api.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

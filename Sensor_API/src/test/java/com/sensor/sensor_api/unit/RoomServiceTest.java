@@ -1,8 +1,8 @@
-package com.sensor.Sensor_API.unit;
-import com.sensor.Sensor_API.exceptions.ApiRequestException;
-import com.sensor.Sensor_API.room.Room;
-import com.sensor.Sensor_API.room.RoomRepository;
-import com.sensor.Sensor_API.room.RoomService;
+package com.sensor.sensor_api.unit;
+import com.sensor.sensor_api.exceptions.ApiRequestException;
+import com.sensor.sensor_api.room.Room;
+import com.sensor.sensor_api.room.RoomRepository;
+import com.sensor.sensor_api.room.RoomService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
