@@ -10,7 +10,6 @@ export default function NavBar() {
     const [isClicked, setClicked] = useState(false);
 
     const handleClick = () => {
-        console.log('click')
         setClicked(!isClicked)
     }
 
