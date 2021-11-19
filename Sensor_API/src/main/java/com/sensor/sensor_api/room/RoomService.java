@@ -1,8 +1,6 @@
-package com.sensor.Sensor_API.room;
+package com.sensor.sensor_api.room;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sensor.Sensor_API.exceptions.ApiRequestException;
+import com.sensor.sensor_api.exceptions.ApiRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

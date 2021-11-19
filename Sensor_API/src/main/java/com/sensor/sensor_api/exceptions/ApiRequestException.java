@@ -1,4 +1,4 @@
-package com.sensor.Sensor_API.exceptions;
+package com.sensor.sensor_api.exceptions;
 
 public class ApiRequestException extends RuntimeException {
     public ApiRequestException(String message) {

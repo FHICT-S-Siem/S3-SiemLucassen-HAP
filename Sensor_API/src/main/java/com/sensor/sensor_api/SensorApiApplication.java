@@ -1,4 +1,4 @@
-package com.sensor.Sensor_API;
+package com.sensor.sensor_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

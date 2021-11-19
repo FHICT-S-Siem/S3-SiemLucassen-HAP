@@ -1,6 +1,6 @@
-package com.sensor.Sensor_API;
+package com.sensor.sensor_api;
 
-import com.sensor.Sensor_API.room.RoomRepository;
+import com.sensor.sensor_api.room.RoomRepository;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

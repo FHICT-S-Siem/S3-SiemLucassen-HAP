@@ -1,4 +1,4 @@
-package com.sensor.Sensor_API.room;
+package com.sensor.sensor_api.room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

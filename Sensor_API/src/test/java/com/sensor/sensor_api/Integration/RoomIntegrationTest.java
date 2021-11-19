@@ -1,10 +1,10 @@
-package com.sensor.Sensor_API.Integration;
+package com.sensor.sensor_api.Integration;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sensor.Sensor_API.exceptions.ApiRequestException;
-import com.sensor.Sensor_API.room.Room;
-import com.sensor.Sensor_API.room.RoomController;
-import com.sensor.Sensor_API.room.RoomService;
+import com.sensor.sensor_api.exceptions.ApiRequestException;
+import com.sensor.sensor_api.room.Room;
+import com.sensor.sensor_api.room.RoomController;
+import com.sensor.sensor_api.room.RoomService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;

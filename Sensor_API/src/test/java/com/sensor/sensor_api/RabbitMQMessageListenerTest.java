@@ -1,12 +1,12 @@
-package com.sensor.Sensor_API;
+package com.sensor.sensor_api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.sensor.Sensor_API.room.Room;
-import com.sensor.Sensor_API.room.RoomRepository;
-import com.sensor.Sensor_API.utils.RoomDeserializer;
+import com.sensor.sensor_api.room.Room;
+import com.sensor.sensor_api.room.RoomRepository;
+import com.sensor.sensor_api.utils.RoomDeserializer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

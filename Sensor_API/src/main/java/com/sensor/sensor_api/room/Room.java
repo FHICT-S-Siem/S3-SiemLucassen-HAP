@@ -1,4 +1,4 @@
-package com.sensor.Sensor_API.room;
+package com.sensor.sensor_api.room;
 
 import javax.persistence.*;
 import java.util.Date;

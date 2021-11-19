@@ -1,12 +1,12 @@
-package com.sensor.Sensor_API.utils;
+package com.sensor.sensor_api.utils;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import com.sensor.Sensor_API.exceptions.ApiRequestException;
-import com.sensor.Sensor_API.room.Room;
+import com.sensor.sensor_api.exceptions.ApiRequestException;
+import com.sensor.sensor_api.room.Room;
 
 import java.io.IOException;
 import java.text.ParseException;
