@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping(path = "api/v1/rooms")
 public class RoomController {
@@ -23,15 +23,10 @@ public class RoomController {
     public Optional<Room> getRoomByName(@PathVariable("roomName") String roomName) { return roomService.getRoomByName(roomName);}
 
     @GetMapping
-    public List<Room> getRooms()
-    {
-        return roomService.getRooms();
-    }
+    public List<Room> getRooms(){return roomService.getRooms();}
 
     @PostMapping
-    public void createRoom(@RequestBody Room room){
-        roomService.createRoom(room);
-    }
+    public void createRoom(@RequestBody Room room){roomService.createRoom(room);}
 
     @PutMapping(path = "/{roomId}")
     public ResponseEntity<Room> updateRoom(@RequestBody Room room, @PathVariable("roomId") Integer roomId) {
