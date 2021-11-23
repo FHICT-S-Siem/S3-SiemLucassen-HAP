@@ -4,6 +4,7 @@ import { useAuth0 } from '@auth0/auth0-react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { HAPRoutes } from './routes';
 import NavBar from './components/Navbar/Navbar';
+import Room from './components/Room'
 
 function App() {
   const {isLoading} = useAuth0();
@@ -13,6 +14,7 @@ function App() {
     <>
       <Router>
         <NavBar />
+        <Room />
         <HAPRoutes />
       </Router>
     </>

@@ -19,7 +19,8 @@ COPY server.py server.py
 EXPOSE 5000
 ENV FLASK_APP=server.py
 
-ARG ROOM=mario
+# Default room set to siem in case there is no argument given.
+ARG ROOM=siem
 
 ENV ROOM=$ROOM
 
