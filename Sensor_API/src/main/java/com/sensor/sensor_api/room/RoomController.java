@@ -26,16 +26,12 @@ public class RoomController {
     public List<Room> getRooms(){return roomService.getRooms();}
 
     @PostMapping
-    public void createRoom(@RequestBody Room room){roomService.createRoom(room);}
+    public void createRoom(@RequestBody Room room){ roomService.createRoom(room);}
 
     @PutMapping(path = "/{roomId}")
     public ResponseEntity<Room> updateRoom(@RequestBody Room room, @PathVariable("roomId") Integer roomId) {
         roomService.updateRoom(roomId, room);
         return new ResponseEntity<>(room, HttpStatus.OK);
-//        boolean success = roomService.updateRoom(roomId, room);
-//        if (success)
-//            return new ResponseEntity<>(room, HttpStatus.OK);
-//        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(path = "/{roomId}")

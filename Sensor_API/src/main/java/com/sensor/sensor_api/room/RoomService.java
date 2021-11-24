@@ -38,7 +38,6 @@ public class RoomService {
         if (oldRoomById.isPresent()) {
             Room newRoom = oldRoomById.get();
             newRoom.setName(room.getName());
-            newRoom.setDatetime(room.getDatetime());
             roomRepository.save(newRoom);
             return true;
         }

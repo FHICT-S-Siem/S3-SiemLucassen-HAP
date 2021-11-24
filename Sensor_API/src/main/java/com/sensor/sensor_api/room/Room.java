@@ -1,12 +1,16 @@
 package com.sensor.sensor_api.room;
 
-import javax.persistence.*;
-import java.util.Date;
+import com.sensor.sensor_api.measurement.Measurement;
 
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
-public class Room {
+public class Room implements Serializable {
 
     @Id
     @SequenceGenerator(
@@ -20,9 +24,10 @@ public class Room {
     )
     private Integer id;
     private String name;
-    private Integer brightness;
-    private Integer temperature;
-    private Date datetime;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "roomName", referencedColumnName = "name")
+    private Set<Measurement> measurements;
 
     public Room() {
     }
@@ -32,11 +37,10 @@ public class Room {
         this.name = name;
     }
 
-    public Room(Integer id, String name, Integer brightness, Integer temperature) {
+    public Room(Integer id, String name, Set<Measurement> measurements) {
         this.id = id;
         this.name = name;
-        this.brightness = brightness;
-        this.temperature = temperature;
+        this.measurements = measurements;
     }
 
     public Integer getId() {
@@ -55,27 +59,16 @@ public class Room {
         this.name = name;
     }
 
-    public Integer getBrightness() {
-        return brightness;
+    public Set<Measurement> getMeasurements() {
+        return measurements;
     }
 
-    public void setBrightness(Integer brightness) {
-        this.brightness = brightness;
+    public void setMeasurements(Set<Measurement> measurements) {
+        this.measurements = measurements;
     }
 
-    public Integer getTemperature() {
-        return temperature;
-    }
-
-    public void setTemperature(Integer temperature) {
-        this.temperature = temperature;
-    }
-
-    public Date getDatetime() {
-        return datetime;
-    }
-
-    public void setDatetime(Date date) {
-        this.datetime = date;
+    public void addMeasurement(Measurement measurement) {
+        measurement.setRoomName(this.name);
+        this.measurements.add(measurement);
     }
 }

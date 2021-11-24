@@ -57,7 +57,7 @@ class SensorDataProvider(HAPDataProvider):
         light_reg_h = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_H)
         return str(light_reg_h << 8 | light_reg_l)
 
-# data plubisher to RabbitMQ
+# data publisher to RabbitMQ
 class SensorDataPublisher(Thread):
   def __init__(self, stopped, sensor_data_provider, room_name):
       Thread.__init__(self)
