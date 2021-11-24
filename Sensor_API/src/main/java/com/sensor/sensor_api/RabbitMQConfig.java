@@ -1,6 +1,6 @@
 package com.sensor.sensor_api;
 
-import com.sensor.sensor_api.room.RoomRepository;
+import com.sensor.sensor_api.measurement.MeasurementRepository;
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -13,10 +13,11 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
     private static final String MY_QUEUE = "sensor_data";
 
-    private final RoomRepository roomRepository;
+    private final MeasurementRepository measurementRepository;
 
-    public RabbitMQConfig(RoomRepository roomRepository) {
-        this.roomRepository = roomRepository;
+
+    public RabbitMQConfig(MeasurementRepository measurementRepository) {
+        this.measurementRepository = measurementRepository;
     }
 
     @Bean
@@ -44,7 +45,7 @@ public class RabbitMQConfig {
         SimpleMessageListenerContainer simpleMessageListenerContainer = new SimpleMessageListenerContainer();
         simpleMessageListenerContainer.setConnectionFactory(connectionFactory());
         simpleMessageListenerContainer.setQueues(myQueue());
-        simpleMessageListenerContainer.setMessageListener(new RabbitMQMessageListener(roomRepository));
+        simpleMessageListenerContainer.setMessageListener(new RabbitMQMessageListener(measurementRepository));
         return simpleMessageListenerContainer;
     }
 }

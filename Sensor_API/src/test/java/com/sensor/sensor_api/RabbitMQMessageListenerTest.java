@@ -4,9 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.sensor.sensor_api.room.Room;
-import com.sensor.sensor_api.room.RoomRepository;
-import com.sensor.sensor_api.utils.RoomDeserializer;
+import com.sensor.sensor_api.measurement.Measurement;
+import com.sensor.sensor_api.measurement.MeasurementRepository;
+import com.sensor.sensor_api.utils.MeasurementDeserializer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -19,38 +19,34 @@ import static org.mockito.Mockito.*;
 
 public class RabbitMQMessageListenerTest {
     private final ObjectMapper objectMapper = new ObjectMapper();
-
-    @Mock public RoomRepository _roomRepository;
-
+    @Mock public MeasurementRepository _measurementRepository;
     public RabbitMQMessageListener rabbitMQMessageListener;
 
     @BeforeEach
     public void setUp() {
-        SimpleModule module = new SimpleModule("RoomDeserializer", new Version(1, 0, 0, null, null, null));
-        module.addDeserializer(Room.class, new RoomDeserializer());
+        SimpleModule module = new SimpleModule("MeasurementDeserializer", new Version(1, 0, 0, null, null, null));
+        module.addDeserializer(Measurement.class, new MeasurementDeserializer());
         objectMapper.registerModule(module);
-        _roomRepository = mock(RoomRepository.class);
-        rabbitMQMessageListener = new RabbitMQMessageListener(_roomRepository);
+        _measurementRepository = mock(MeasurementRepository.class);
+        rabbitMQMessageListener = new RabbitMQMessageListener(_measurementRepository);
     }
 
     @Test
     public void shouldReceiveMessage() throws JsonProcessingException {
         // Arrange
-        Room room = new Room();
-        room.setDatetime(new Date());
-        room.setName("Mario");
-        room.setBrightness(5);
-        room.setTemperature(25);
+        Measurement measurement = new Measurement();
+        measurement.setDatetime(new Date());
+        measurement.setRoomName("Siem");
+        measurement.setBrightness(5);
+        measurement.setTemperature(25);
 
-        byte[] messageBody = objectMapper.writeValueAsBytes(room);
+        byte[] messageBody = objectMapper.writeValueAsBytes(measurement);
         Message msg = new Message(messageBody);
 
         // Act
         rabbitMQMessageListener.onMessage(msg);
 
         // Assert
-        verify(_roomRepository, times(1)).save(any());
+        verify(_measurementRepository, times(1)).save(any());
     }
-
-
 }

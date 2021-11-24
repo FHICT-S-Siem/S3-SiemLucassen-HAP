@@ -6,41 +6,41 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.sensor.sensor_api.exceptions.ApiRequestException;
-import com.sensor.sensor_api.room.Room;
+import com.sensor.sensor_api.measurement.Measurement;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class RoomDeserializer extends StdDeserializer<Room> {
+public class MeasurementDeserializer extends StdDeserializer<Measurement> {
     public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //removed static because of sonarqube bug reliability reasons
 
-    public RoomDeserializer() {
+    public MeasurementDeserializer() {
         this(null);
     }
 
-    public RoomDeserializer(Class<?> vc) {
+    public MeasurementDeserializer(Class<?> vc) {
         super(vc);
     }
 
     @Override
-    public Room deserialize(JsonParser parser, DeserializationContext deserializer) throws IOException {
-        Room room = new Room();
+    public Measurement deserialize(JsonParser parser, DeserializationContext deserializer) throws IOException {
+        Measurement measurement = new Measurement();
         ObjectCodec codec = parser.getCodec();
         JsonNode node = codec.readTree(parser);
         String date = node.get("datetime").asText();
         try {
-            room.setName(node.get("room").asText());
-            room.setBrightness(node.get("brightness").asInt());
-            room.setTemperature(node.get("temperature").asInt());
-            room.setDatetime(FORMATTER.parse(date));
+            measurement.setRoomName(node.get("room").asText());
+            measurement.setBrightness(node.get("brightness").asInt());
+            measurement.setTemperature(node.get("temperature").asInt());
+            measurement.setDatetime(FORMATTER.parse(date));
         } catch (ParseException e) {
-            if (room.getDatetime() == null)
-                room.setDatetime(new Date(Long.parseLong(date)));
+            if (measurement.getDatetime() == null)
+                measurement.setDatetime(new Date(Long.parseLong(date)));
             else
-                throw new ApiRequestException("Room datetime is null.", e);
+                throw new ApiRequestException("Measurement datetime is null.", e);
         }
-        return room;
+        return measurement;
     }
 }
