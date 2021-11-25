@@ -1,10 +1,16 @@
 import React from 'react';
+import Room from '../components/Room'
 
 const Dashboard = props => {
   return (
     <div>
       <h3>Dashboard View</h3>
-      <p> This is the dashboard view of SPA</p>
+      <div>
+        <ul>
+          <li><Room /></li>
+        </ul>
+      </div>
+        
     </div>
   );
 };
