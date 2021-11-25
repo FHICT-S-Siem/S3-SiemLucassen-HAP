@@ -3,8 +3,8 @@ name: User Story
 about: Describes type of user, what they want, and why; valuable increment of functionality,
   testable by users.
 title: 'Feature: '
-labels: 'enhancement'
-assignees: ''
+labels: User story
+assignees: SiemLuc
 
 ---
 
@@ -22,6 +22,6 @@ Also, here are a few points that need to be addressed:
 1. Constraint 1:
 
 ### Tasks
-- [ ] _TBA_
-- [ ] _TBA_
-- [ ] _TBA_
+- [ ]
+- [ ] 
+- [ ]
