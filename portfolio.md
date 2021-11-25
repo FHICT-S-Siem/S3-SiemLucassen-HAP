@@ -26,9 +26,14 @@ The goal is really to have one screen with just a small menu for my rooms, so I 
 
 ## C4 Models 
 
-### C2
+### C2 - Container Diagram
+In this diagram 
+![Container diagram](https://user-images.githubusercontent.com/48807736/143461583-e95969fe-f4a4-47aa-9005-43e8e28d0124.png)
 
-### C3
+### C3 - Component Diagram
+
+![Component Diagram](https://user-images.githubusercontent.com/48807736/143461581-78c8bfb0-980f-42da-92db-fffa8abbcaa7.png)
+
 
 # Learning Outcomes
 
