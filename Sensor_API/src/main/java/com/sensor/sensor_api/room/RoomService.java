@@ -51,11 +51,11 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> getRoomByName(String name) {
+    public Optional<Room> getMeasurementsByRoom(String name) {
 
         if (name.isEmpty())
         {
-            throw new ApiRequestException("There are no rooms with this name found");
+            throw new ApiRequestException("There are no measurements with this room name found");
         }
         else {
             return roomRepository.findRoomByName(name);

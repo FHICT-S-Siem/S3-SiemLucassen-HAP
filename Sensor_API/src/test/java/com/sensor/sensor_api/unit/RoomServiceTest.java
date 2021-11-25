@@ -38,21 +38,6 @@ public class RoomServiceTest {
     }
 
     @Test
-    void Should_Get_Room_By_Name() {
-        // given
-        Room room = new Room(
-                1,
-                "Siem"
-        );
-
-        given(roomRepository.findRoomByName(room.getName())).willReturn(java.util.Optional.of(room));
-        // when
-        underTest.getRoomByName(room.getName());
-        // then
-        verify(roomRepository).findRoomByName(room.getName());
-    }
-
-    @Test
     void Should_Create_Room() {
         // given
         Room expected = new Room(
