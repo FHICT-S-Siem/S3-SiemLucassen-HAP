@@ -12,7 +12,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
-   - [Web Application](#Web-Application])
+   - [Web Application](#Web-Application)
    - [Software quality](#Software-quality)
    - [CI/CD](#CI/CD)
    - [Professional](#Professional)
