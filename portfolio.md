@@ -1,3 +1,7 @@
+# Portfolio Semester 3
+Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
+
+
 <img src="https://www.home-assistant.io/images/blog/2019-08-home-assistant-cast/hero.png">
 
 ## Table of contents
@@ -13,8 +17,6 @@
    - [You design and implement a semi automated software release process that matches the needs of the project context](#You-design-and-implement-a-semi-automated-software-release-process-that-matches-the-needs-of-the-project-context)
    - [You act in a professional manner during software development and learning](#You-act-in-a-professional-manner-during-software-development-and-learning)
 
-# Portfolio Semester 3
-Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
 
 ## The substantiation for using these technologies
 
