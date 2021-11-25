@@ -60,7 +60,7 @@ function SensorComponent(measurements: Measurement[]) {
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: 'Measurement Line Chart',
       },
     },
   };

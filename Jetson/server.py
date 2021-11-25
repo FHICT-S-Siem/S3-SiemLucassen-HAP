@@ -1,6 +1,7 @@
 from abc import abstractmethod
 from flask import Flask  # Flask web app - http://home:5000
 import pika
+import smbus
 from threading import Thread, Event
 from datetime import datetime
 import json
@@ -30,7 +31,6 @@ class RandomDataProvider(HAPDataProvider):
 # used for the jetson nano with smbus for the SensorHub board
 class SensorDataProvider(HAPDataProvider):
     def __init__(self):
-        import smbus
         self.DEVICE_BUS = 1
         self.DEVICE_ADDR = 0x17
         self.TEMP_REG = 1
@@ -69,9 +69,9 @@ class SensorDataPublisher(Thread):
       self.channel = self.connection.channel()
       self.channel.queue_declare(queue='sensor_data', durable=True)
   
-  # Publish sensor data every 5 minutes
+  # Publish sensor data every minute
   def run(self):
-      while not self.stopped.wait(60*5):
+      while not self.stopped.wait(60):
           self.publish_sensor_data()
 
   def publish_sensor_data(self):
