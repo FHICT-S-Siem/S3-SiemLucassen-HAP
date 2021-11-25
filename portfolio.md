@@ -14,7 +14,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
  - Learning Outcomes
    - [Web Application](#Web-Application)
    - [Software quality](#Software-quality)
-   - [CI/CD](#CI/CD)
+   - [CICD](#CICD)
    - [Professional](#Professional)
 
 
@@ -60,7 +60,7 @@ You design and build user friendly full stack web applications
 ## Software quality
 You use software tooling and methodology that continuously monitors and improve the software quality during software development
  
-## CI/CD
+## CICD
 You design and implement a semi automated software release process that matches the needs of the project context
 
 ## Professional
