@@ -3,6 +3,10 @@
 # Portfolio Semester 3
 Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
 
+## Table of contents
+
+-[The substantiation for using these technologies](#The-substantiation-for-using-these-technologies)
+
 ## The substantiation for using these technologies
 
 I chose Java over C# simply because I've been coding in C# for a long time, I am eager to learn new languages such as Java so I can diversify my scope and I am certain
@@ -37,6 +41,7 @@ In this model you can see which services the client uses, if a user makes a requ
 
 
 # Learning Outcomes
+The following are the learning outcomes I need to accomplish in semester 3.
 
 ## You design and build user-friendly, full-stack web applications.
 
@@ -48,3 +53,5 @@ In this model you can see which services the client uses, if a user makes a requ
 
 
 ## You act in a professional manner during software development and learning.
+
+
