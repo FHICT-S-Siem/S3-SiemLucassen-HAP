@@ -17,9 +17,6 @@ public class MeasurementController {
         this.measurementService = measurementService;
     }
 
-    @GetMapping("/{roomName}")
-    public Optional<Measurement> getMeasurementsByRoomName(@PathVariable("roomName") String roomName) { return measurementService.getMeasurementsByRoomName(roomName);}
-
     @GetMapping
     public List<Measurement> getMeasurements(){return measurementService.getMeasurements();}
 

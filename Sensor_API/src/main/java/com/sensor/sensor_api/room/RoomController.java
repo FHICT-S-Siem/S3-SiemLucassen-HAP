@@ -20,7 +20,7 @@ public class RoomController {
     }
 
     @GetMapping("/{roomName}")
-    public Optional<Room> getRoomByName(@PathVariable("roomName") String roomName) { return roomService.getRoomByName(roomName);}
+    public Optional<Room> getMeasurementByRoomName(@PathVariable("roomName") String roomName) { return roomService.getMeasurementByRoomName(roomName);}
 
     @GetMapping
     public List<Room> getRooms(){return roomService.getRooms();}

@@ -76,8 +76,4 @@ public class Measurement implements Serializable {
         this.datetime = datetime;
     }
 
-
-
-
-
 }

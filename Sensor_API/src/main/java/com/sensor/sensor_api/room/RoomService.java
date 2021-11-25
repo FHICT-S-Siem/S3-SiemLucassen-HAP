@@ -26,7 +26,7 @@ public class RoomService {
     }
 
     public void createRoom(Room room) {
-        Optional<Room> roomByName = roomRepository.findRoomByName(room.getName());
+        Optional<Room> roomByName = roomRepository.findMeasurementByRoomName(room.getName());
         if (roomByName.isPresent()) {
             throw new ApiRequestException("Name already taken!");
         }
@@ -51,14 +51,14 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> getRoomByName(String name) {
+    public Optional<Room> getMeasurementByRoomName(String name) {
 
         if (name.isEmpty())
         {
-            throw new ApiRequestException("There are no rooms with this name found");
+            throw new ApiRequestException("There are no measurements with this room name found");
         }
         else {
-            return roomRepository.findRoomByName(name);
+            return roomRepository.findMeasurementByRoomName(name);
         }
     }
 
