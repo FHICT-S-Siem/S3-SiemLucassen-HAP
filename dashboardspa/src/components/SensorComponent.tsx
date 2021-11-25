@@ -85,7 +85,7 @@ function SensorComponent(measurements: Measurement[]) {
   };
 
   return (
-    <div className="TemperatureChart">
+    <div className="SensorChart">
       <Line options={options} data={data} />
     </div>
   )
