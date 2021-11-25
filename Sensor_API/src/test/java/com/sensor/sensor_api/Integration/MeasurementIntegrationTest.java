@@ -12,14 +12,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 
-import javax.validation.constraints.NotNull;
-import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Set;
 
-import static com.fasterxml.jackson.databind.type.LogicalType.Collection;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -46,7 +40,7 @@ public class MeasurementIntegrationTest {
 
         );
 
-        when(roomService.getMeasurementByRoomName(roomName)).thenReturn(java.util.Optional.of(room));
+        when(roomService.getMeasurementsByRoom(roomName)).thenReturn(java.util.Optional.of(room));
 
         mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(room)));

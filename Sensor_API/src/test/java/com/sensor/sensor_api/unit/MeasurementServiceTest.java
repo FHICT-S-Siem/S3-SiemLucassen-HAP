@@ -1,8 +1,5 @@
 package com.sensor.sensor_api.unit;
 
-import com.sensor.sensor_api.measurement.Measurement;
-import com.sensor.sensor_api.measurement.MeasurementRepository;
-import com.sensor.sensor_api.measurement.MeasurementService;
 import com.sensor.sensor_api.room.Room;
 import com.sensor.sensor_api.room.RoomRepository;
 import com.sensor.sensor_api.room.RoomService;
@@ -11,9 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.sql.Date;
-import java.time.LocalDate;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
@@ -40,11 +34,11 @@ public class MeasurementServiceTest {
                 "Siem"
         );
 
-        given(roomRepository.findMeasurementByRoomName(room.getName())).willReturn(java.util.Optional.of(room));
+        given(roomRepository.findRoomByName(room.getName())).willReturn(java.util.Optional.of(room));
         // when
-        underTest.getMeasurementByRoomName(room.getName());
+        underTest.getMeasurementsByRoom(room.getName());
         // then
-        verify(roomRepository).findMeasurementByRoomName(room.getName());
+        verify(roomRepository).findRoomByName(room.getName());
 
 //        System.out.println("roomname: " + measurement.getRoomName());
 //        System.out.println("date of measurement: " + measurement.getDatetime());

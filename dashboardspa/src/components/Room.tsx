@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import measurements from '../api/measurements';
 import api from '../api/measurements'
 import Measurement from '../models/Measurement'
-import TemperatureComponent from './TemperatureComponent'
+import SensorComponent from './SensorComponent'
 
 function Room() {
     const [roomMeasurements, setRoomMeasurements] = useState<Measurement[]>([]);
-    const [roomName, setRoomName] = useState('mario')
-    const [roomNameFromButtonClick, setRoomNameFromButtonClick] = useState('mario')
+    const [roomName, setRoomName] = useState('siem')
+    const [roomNameFromButtonClick, setRoomNameFromButtonClick] = useState('siem')
 
     const handleClick = () => {
         setRoomNameFromButtonClick(roomName)
@@ -35,7 +35,7 @@ function Room() {
     //     )
     // });
     return (
-        TemperatureComponent(roomMeasurements)
+        SensorComponent(roomMeasurements)
     )
 }
 

@@ -121,7 +121,7 @@ public class RoomServiceTest {
         );
 
         // when
-        given(roomRepository.findMeasurementByRoomName("Siem"))
+        given(roomRepository.findRoomByName("Siem"))
                 .willReturn(java.util.Optional.of(room));
         // then
         assertThatThrownBy(() -> underTest.createRoom(room))

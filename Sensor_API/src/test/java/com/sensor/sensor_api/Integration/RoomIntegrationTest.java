@@ -49,7 +49,7 @@ public class RoomIntegrationTest {
         String roomName = "Siem";
         Room room = new Room(1, roomName);
 
-        when(roomService.getMeasurementByRoomName(roomName)).thenReturn(java.util.Optional.of(room));
+        when(roomService.getMeasurementsByRoom(roomName)).thenReturn(java.util.Optional.of(room));
 
         mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(room)));
@@ -85,7 +85,7 @@ public class RoomIntegrationTest {
     @Test
     public void shouldReturnExceptionMessage() throws Exception {
         String roomName = "siem";
-        when(roomService.getMeasurementByRoomName(roomName)).thenThrow(new ApiRequestException("There are no measurements with this room name found"));
+        when(roomService.getMeasurementsByRoom(roomName)).thenThrow(new ApiRequestException("There are no measurements with this room name found"));
 
         mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
                 .andDo(print()).andExpect(status().is4xxClientError())
