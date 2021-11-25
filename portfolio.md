@@ -1,11 +1,20 @@
 <img src="https://www.home-assistant.io/images/blog/2019-08-home-assistant-cast/hero.png">
 
+## Table of contents
+ - Portfolio Semester 3
+   - [The substantiation for using these technologies](#The-substantiation-for-using-these-technologies)
+   - [Project description](#Project-description)
+   - [C4 Models](#C4-Models)
+     - [C2 Container Diagram](#C2-Container-Diagram)
+     - [C3 Component Model](#C3-Component-Model)
+ - Learning Outcomes
+   - [You design and build user friendly, full stack web applications](#You-design-and-build-user-friendly,-full-stack-web-applications)
+   - [You use software tooling and methodology that continuously monitors and improve the software quality during software development](#You-use-software-tooling-and-methodology-that-continuously-monitors-and-improve-the-software-quality-during-software-development)
+   - [You design and implement a (semi)automated software release process that matches the needs of the project context](#You-design-and-implement-a-(semi)automated-software-release-process-that-matches-the-needs-of-the-project-context)
+   - [You act in a professional manner during software development and learning](#You-act-in-a-professional-manner-during-software-development-and-learning)
+
 # Portfolio Semester 3
 Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
-
-## Table of contents
-
--[The substantiation for using these technologies](#The-substantiation-for-using-these-technologies)
 
 ## The substantiation for using these technologies
 
@@ -29,12 +38,12 @@ The goal is to have one screen with just a small menu for my rooms, so I can hav
 
 ## C4 Models 
 
-### C2 - Container Diagram
+### C2 Container Diagram
 In this diagram you can see that the user has acces to the dashboardSPA. He has the possibility to Browse all sensordata from the browser when authorized by the  login provider Auth0.
 
 ![Container diagram](https://user-images.githubusercontent.com/48807736/143461583-e95969fe-f4a4-47aa-9005-43e8e28d0124.png)
 
-### C3 - Component model
+### C3 Component Model
 In this model you can see which services the client uses, if a user makes a request, it goes trough the controller that allows the user to use the sensor data, the data access component will provide the functionality related to signin in and sensor data storage.
 
 ![Component Diagram](https://user-images.githubusercontent.com/48807736/143461581-78c8bfb0-980f-42da-92db-fffa8abbcaa7.png)
@@ -43,15 +52,15 @@ In this model you can see which services the client uses, if a user makes a requ
 # Learning Outcomes
 The following are the learning outcomes I need to accomplish in semester 3.
 
-## You design and build user-friendly, full-stack web applications.
+## You design and build user friendly, full stack web applications
 
 
-## You use software tooling and methodology that continuously monitors and improve the software quality during software development.
+## You use software tooling and methodology that continuously monitors and improve the software quality during software development
 
  
-## You design and implement a (semi)automated software release process that matches the needs of the project context.
+## You design and implement a (semi)automated software release process that matches the needs of the project context
 
 
-## You act in a professional manner during software development and learning.
+## You act in a professional manner during software development and learning
 
 
