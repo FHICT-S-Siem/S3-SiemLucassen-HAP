@@ -4,6 +4,8 @@ Home assistant platform is made with React, Java Spring with microservice archit
 
 <img src="https://www.home-assistant.io/images/blog/2019-08-home-assistant-cast/hero.png">
 
+[_image-source_](https://www.home-assistant.io/blog/2019/08/06/home-assistant-cast/)
+
 ## Table of contents
  - Portfolio Semester 3
    - [The substantiation for using these technologies](#The-substantiation-for-using-these-technologies)
