@@ -8,7 +8,7 @@
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
-   - [You design and build user friendly, full stack web applications](#You-design-and-build-user-friendly,-full-stack-web-applications)
+   - [You design and build user friendly, full stack web applications](#You-design-and-build-user-friendly-,-full-stack-web-applications)
    - [You use software tooling and methodology that continuously monitors and improve the software quality during software development](#You-use-software-tooling-and-methodology-that-continuously-monitors-and-improve-the-software-quality-during-software-development)
    - [You design and implement a (semi)automated software release process that matches the needs of the project context](#You-design-and-implement-a-(semi)automated-software-release-process-that-matches-the-needs-of-the-project-context)
    - [You act in a professional manner during software development and learning](#You-act-in-a-professional-manner-during-software-development-and-learning)
