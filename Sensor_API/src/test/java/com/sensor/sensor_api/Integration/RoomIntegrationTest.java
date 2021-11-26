@@ -30,19 +30,19 @@ public class RoomIntegrationTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @Test
-    void shouldReturnRooms() throws Exception {
-        Room room1 = new Room(1, "Mario");
-        Room room2 = new Room(2, "Siem");
-        List<Room> roomList = new ArrayList<>();
-        roomList.add(room1);
-        roomList.add(room2);
-
-        when(roomService.getRooms()).thenReturn(roomList);
-
-        mockMvc.perform(get("/api/v1/rooms"))
-                .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(roomList)));
-    }
+//    @Test
+//    void shouldReturnRooms() throws Exception {
+//        Room room1 = new Room(1, "Mario");
+//        Room room2 = new Room(2, "Siem");
+//        List<Room> roomList = new ArrayList<>();
+//        roomList.add(room1);
+//        roomList.add(room2);
+//
+//        when(roomService.getRooms()).thenReturn(roomList);
+//
+//        mockMvc.perform(get("/api/v1/rooms"))
+//                .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(roomList)));
+//    }
 
     @Test
     void shouldGetMeasurementsByRoomName() throws Exception {

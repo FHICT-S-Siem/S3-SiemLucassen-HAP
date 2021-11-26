@@ -6,8 +6,8 @@ import SensorComponent from './SensorComponent'
 
 function Room() {
     const [roomMeasurements, setRoomMeasurements] = useState<Measurement[]>([]);
-    const [roomName, setRoomName] = useState('siem')
-    const [roomNameFromButtonClick, setRoomNameFromButtonClick] = useState('siem')
+    const [roomName, setRoomName] = useState('mario')
+    const [roomNameFromButtonClick, setRoomNameFromButtonClick] = useState('mario')
 
     const handleClick = () => {
         setRoomNameFromButtonClick(roomName)
@@ -34,7 +34,7 @@ function Room() {
     //         <div key={index}>Temperature: {measurement.temperature}</div>
     //     )
     // });
-    return (
+    return (        
         SensorComponent(roomMeasurements)
     )
 }

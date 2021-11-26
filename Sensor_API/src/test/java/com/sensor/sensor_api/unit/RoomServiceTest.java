@@ -29,13 +29,13 @@ public class RoomServiceTest {
         underTest = new RoomService(roomRepository);
     }
 
-    @Test
-    void Should_Get_All_Rooms(){
-        // when
-        underTest.getRooms();
-        // then
-        verify(roomRepository).findAll();
-    }
+//    @Test
+//    void Should_Get_All_Rooms(){
+//        // when
+//        underTest.getRooms();
+//        // then
+//        verify(roomRepository).findAll();
+//    }
 
     @Test
     void Should_Create_Room() {

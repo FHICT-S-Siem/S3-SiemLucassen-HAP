@@ -5,6 +5,12 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.App{
+  width: 100vw;
+  height: 100vh;
+  background: #FFFF;
+}
+
 body {
   padding: 0;
 }
@@ -25,3 +31,8 @@ button {
   color: inherit;
 }
 
+.Sidebar{
+  height: 100%;
+  width: 250px;
+  background-color: #2C2B5B;
+}
