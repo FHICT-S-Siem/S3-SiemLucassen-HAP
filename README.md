@@ -1,6 +1,8 @@
 # S3-SiemLucassen-HAP
 Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
 
+The reason for working a mono repository is stated in my portfolio after doing research with a fellow classmate.
+
 ## Motivation
 
 The goal of this project is to have a wall mounted tablet running a dashboard to control for my home.
