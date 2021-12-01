@@ -14,8 +14,10 @@ function App() {
     <div className="App">
       <Router>
           <NavBar />
-          <SideBar/>
-          <HAPRoutes/>
+          <div className="wrap">
+            <SideBar/>
+            <HAPRoutes/>
+          </div>
       </Router>
     </div>
   );

@@ -6,13 +6,17 @@
 }
 
 .App{
-  width: 100vw;
-  height: 100vh;
   background: #FFFF;
 }
 
 body {
   padding: 0;
+}
+
+.content{
+  display: block;
+  width: 75vw;
+  height: 100vh;
 }
 
 button {
@@ -26,13 +30,74 @@ button {
   text-shadow: 2px 2px #ffffff42;
 }
 
+li{
+  text-decoration: none;
+}
 .link{
   text-decoration: none;
   color: inherit;
 }
 
 .Sidebar{
-  height: 100%;
+  color: white;
+  height: auto;
   width: 250px;
   background-color: #2C2B5B;
+}
+
+.locationItem{
+  background: black;
+  list-style: none;
+  padding: 10px;
+  color: #34FFCE;
+  width: 100%;
+  text-align: center;
+}
+
+
+.roomItems{
+  background: #323953;
+  list-style: none;
+  color: white;
+  height: 100px;
+  padding: 27px;
+  width: 100%;
+  text-align: center;
+}
+
+.roomItems:hover{
+  border: solid 4px #34FFCE;
+  background: #313A5A;
+  color: #eeeeeece;
+  cursor: pointer;
+}
+
+.roomItems:active{
+  border: solid 4px #34FFCE;
+  background: #313A5A;
+  color: #34FFCE;
+  cursor: pointer;
+}
+
+.wrap {
+  display: inline-flex;
+}
+
+.Sidebar-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 860px) {
+  .Sidebar{
+    display: none;
+  }
+
+  .Sidebar-mobile{
+    height: auto;
+    display: block;
+  }
+
+  .wrap{
+    display: grid;
+  }
 }

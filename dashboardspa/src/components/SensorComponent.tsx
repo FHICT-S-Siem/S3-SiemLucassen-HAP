@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Measurement from '../models/Measurement';
-import './SensorComponent.css';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -29,6 +28,8 @@ function SensorComponent(measurements: Measurement[]) {
     m.datetime = new Date(m.datetime);
     return m;
   })
+
+  // Sort on measurement date
   measurements2.sort((a, b) => a.datetime.valueOf() - b.datetime.valueOf());
 
   const dates: string[] = measurements2.map((m) => m.datetime.toLocaleTimeString())

@@ -4,9 +4,11 @@ import pika
 import smbus
 from threading import Thread, Event
 from datetime import datetime
+import unittest
 import json
 import os
 from random import Random
+
 
 class HAPDataProvider(object):
     @abstractmethod
@@ -27,6 +29,16 @@ class RandomDataProvider(HAPDataProvider):
 
     def get_brightness(self):
         return int(self.rng.uniform(0, 50))
+
+# class TestBrightnessConverterToZero(unittest.TestCase):
+#     def __init__(self):
+#         self.x = 65365
+
+#     def get_brightness(self):
+#         # Compare expected with actual
+#         self.assertEqual(get_brightness() ,self.x)
+        
+
 
 # used for the jetson nano with smbus for the SensorHub board
 class SensorDataProvider(HAPDataProvider):
