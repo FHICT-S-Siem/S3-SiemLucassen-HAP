@@ -30,13 +30,13 @@ class RandomDataProvider(HAPDataProvider):
     def get_brightness(self):
         return int(self.rng.uniform(0, 50))
 
-# class TestBrightnessConverterToZero(unittest.TestCase):
-#     def __init__(self):
-#         self.x = 65365
+class TestBrightnessConverterToZero(unittest.TestCase):
+    def __init__(self):
+        self.x = 0
 
-#     def get_brightness(self):
-#         # Compare expected with actual
-#         self.assertEqual(get_brightness() ,self.x)
+    def get_brightness(self):
+        # Compare expected with actual
+        self.assertEqual(get_brightness() ,self.x)
         
 
 
@@ -67,6 +67,7 @@ class SensorDataProvider(HAPDataProvider):
     def get_brightness(self):
         light_reg_l = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_L)
         light_reg_h = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_H)
+        print(bin(light_reg_h << 8 | light_reg_l))
         return str(light_reg_h << 8 | light_reg_l)
 
 # data publisher to RabbitMQ
@@ -116,7 +117,7 @@ def get_temperature():
     return sensor_data_provider.get_temperature()
 
 @app.route("/brightness")
-def get_brightness():
+def get_brightness():    
     return sensor_data_provider.get_brightness()
 
 if __name__ == '__main__':

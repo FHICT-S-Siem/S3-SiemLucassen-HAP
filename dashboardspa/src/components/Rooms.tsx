@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import api from '../api/Api'
-import Room from '../models/Room'
-
-
+import RoomModel from '../models/Room'
+import Dashboard from '../views/Dashboard';
 function Rooms() {
-    
-    const [allRooms, setRooms] = useState<Room[]>([]);
+
+    const [allRooms, setRooms] = useState<RoomModel[]>([]);
+    const [nameFromClick, setNameFromClick] = useState('siem')
+    const handleClick = (name:string) => {
+        setNameFromClick(name)
+    }
 
     // Fetch AllRooms
     useEffect(() => {
         async function fetchRooms() {
             try {
                 const rooms = await api.get(`/rooms`)
-                .then(res => res.data.rooms)
+                .then(res => res.data.content)
                 .catch(err => []);
             console.log(rooms)
             setRooms(rooms)
@@ -23,13 +26,13 @@ function Rooms() {
         fetchRooms();
     }, [])
     return (
+        // TODO: Retrieve all rooms, on click transfer roomName to Room.tsx
         <div>
-            <li>
-                <h1 className="roomItems active">Siem</h1>
-            </li>
-            <li>
-                <h1 className="roomItems">Mario</h1>
-            </li>
+            <ul>
+                {allRooms.map(room => (
+                <h1 className="roomItems" key={room.id} onClick={() => handleClick(room.name)}>{room.name}</h1>
+                ))}
+            </ul>
         </div>
     )
 }

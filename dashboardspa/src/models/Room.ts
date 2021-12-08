@@ -1,8 +1,5 @@
 interface Room {
-    brightness: number,
-    datetime: Date,
-    id: number,
-    roomName: string,
-    temperature: number
+    id: number;
+    name: string;
 }
 export default Room
