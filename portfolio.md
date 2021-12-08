@@ -59,11 +59,86 @@ The following are the learning outcomes I need to accomplish in semester 3.
 ## Web Application
 You design and build user friendly full stack web applications
 
+#### Design
+First of, I made a UI-design in Figma so I have a good reference where to place the components. 
+<table>
+ <tr>
+  <td><img src="https://i.postimg.cc/yNdhyn4X/hap-design.png"></td>
+ </tr>
+</table>
+
+#### Identity service: OAuth2
+With this service the user is able to login with google, I implemented this feature so if I ever move houses I could still login with the same account and view my account settings. It is also possible for the user to see their OAuth provided information. 
+<table>
+ <tr>
+  <td><img src="https://i.postimg.cc/wT1SwKL3/Auth-login.png" width=500 height=250></td>
+  <td><img src="https://i.postimg.cc/nhnsf128/Auth-profile-information.png" width=500 height=250></td>
+ </tr>
+</table>
+
+#### Dashboard
+In this dashboard the user is able to see all the measurements for the given room where a jetson nano is mounted. In my case there is a Jetson in my brother's (mario) and in my own room. When a room gets clicked from the side bar, the measurements will be retrieved and shown in a measurement chart and in cards with averages.
+
 ## Software quality
 You use software tooling and methodology that continuously monitors and improve the software quality during software development
  
+#### Testing
+
+Testing is done to assure the user services run without encountering any problems. For testing methodologies I used Unit, Integration and E2E testing:
+
+*FAQ: What’s the difference between unit and integration testing?*<br>
+Unit testing is focused on testing a single function where as integration testing is focused on combining functions correctly. 
+
+##### Unit testing 
+I created multiple unit tests to tell the behavior of the functions either with the right input or a test scenario. Before testing the unit, I mocked objects using Mockito to simulate a real scenario. One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. 
+
+<table>
+ <tr>
+  <td><img src="https://i.postimg.cc/bJhH7nZs/Unittest-successcenario.png" width=500 height=250></td>
+  <td><img src="https://i.postimg.cc/GmmPrr3x/Unittest-example.png" width=500 height=250></td>
+ </tr>
+</table>
+
+##### Integration testing
+I wrote my integration tests with [MockMVC](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/), this allows you to create fake requests to a controller. In this case I am looking whether the response code of the tests are acting upon it's expected behaviour. 
+
+<img src="https://i.postimg.cc/wMPScFB1/Integrationtest-goodscenario.png">
+
+<img src="https://i.postimg.cc/C193bm5z/Integrationtest-testscenario.png">
+
+#### Code coverage
+
+Whith Sonarcloud I can continously monitor code quality during my development. Sonarcloud analyzes my code everytime I push to my develop branch. (You can change these settings in your [workflow](https://docs.github.com/en/actions/quickstart))
+
+When you get your overview of bugs, the bugs will be graded by reliability. In my case I left the Service testing class on public.<br>
+
+<img src="https://i.postimg.cc/rp7T98YV/Sonarcloud-example.png">
+
+When clicking on 'why is this an issue?' it gives you a reasoning for the bug.
+
+<img src="https://i.postimg.cc/2Swg0n28/Sonarcloud-reasoning.png">
+
 ## CICD
 You design and implement a semi automated software release process that matches the needs of the project context
+
+CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud.
+
+### Automatic testing
+
+By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests everytime I push to the develop branch. 
+
+```yml
+name: "sensor api"
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - develop
+    paths:
+      - Sensor_API/**
+```
+
+
 
 ## Professional
 You act in a professional manner during software development and learning
