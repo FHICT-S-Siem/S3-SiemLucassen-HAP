@@ -29,28 +29,13 @@ public class RoomServiceTest {
         underTest = new RoomService(roomRepository);
     }
 
-    @Test
-    void Should_Get_All_Rooms(){
-        // when
-        underTest.getRooms();
-        // then
-        verify(roomRepository).findAll();
-    }
-
-    @Test
-    void Should_Get_Room_By_Name() {
-        // given
-        Room room = new Room(
-                1,
-                "Siem"
-        );
-
-        given(roomRepository.findRoomByName(room.getName())).willReturn(java.util.Optional.of(room));
-        // when
-        underTest.getRoomByName(room.getName());
-        // then
-        verify(roomRepository).findRoomByName(room.getName());
-    }
+//    @Test
+//    void Should_Get_All_Rooms(){
+//        // when
+//        underTest.getRooms();
+//        // then
+//        verify(roomRepository).findAll();
+//    }
 
     @Test
     void Should_Create_Room() {

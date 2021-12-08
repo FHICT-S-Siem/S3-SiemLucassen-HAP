@@ -1,10 +1,11 @@
 :root {
-    --primary: #3acbf7;
+    --primary: #000000;
 }
 
 .btn {
     padding: 8px 20px;
     border-radius: 4px;
+    width: 200px;
     outline: none;
     border: none;
     cursor: pointer;
@@ -14,7 +15,7 @@
     padding: 8px, 20px;
     transition: all 0.3s ease-out;
     background: #fff;
-    color: #6568F4;
+    color: #000000;
     transition: 250ms;
 }
 
@@ -43,4 +44,8 @@
     border-radius: 4px;
     font-size: 20px;
     color: #fff
+}
+
+.loginBtn{
+    margin-right: 5px;
 }

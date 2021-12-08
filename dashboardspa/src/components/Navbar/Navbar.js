@@ -16,9 +16,8 @@ export default function NavBar() {
     const { user, isAuthenticated } = useAuth0();
 
     return (
-
         <nav className="NavbarItems">
-            <h1 className="navbar-logo">HAP {isAuthenticated && <p>Welcome, {user.nickname}</p>}
+            <h1 className="navbar-logo">HAP-Dashboard {isAuthenticated && <p>Welcome, {user.nickname}</p>}
             </h1>
             <div className="menu-icon" onClick={handleClick}>
                 <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
@@ -34,7 +33,8 @@ export default function NavBar() {
                     )
                 })}                  
             </ul>
-            {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+            
+            {isAuthenticated ? <LogoutButton className="loginBtn"/> : <LoginButton className="loginBtn"/>}
         </nav>
     )
 }
