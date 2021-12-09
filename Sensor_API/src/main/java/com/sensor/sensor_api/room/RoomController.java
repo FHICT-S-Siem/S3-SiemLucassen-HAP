@@ -21,9 +21,9 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping("/{roomName}")
-    public Optional<Room> getMeasurementsByRoom(@PathVariable("roomName") String roomName) {
-        return roomService.getMeasurementsByRoom(roomName);
+    @GetMapping("/{room}")
+    public Optional<Room> getMeasurementsByRoom(@PathVariable("room") String room) {
+        return roomService.getMeasurementsByRoom(room);
     }
 
     @GetMapping

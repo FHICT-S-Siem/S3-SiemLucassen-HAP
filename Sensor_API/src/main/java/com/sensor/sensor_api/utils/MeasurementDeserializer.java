@@ -31,7 +31,7 @@ public class MeasurementDeserializer extends StdDeserializer<Measurement> {
         JsonNode node = codec.readTree(parser);
         String date = node.get("datetime").asText();
         try {
-            measurement.setRoomName(node.get("roomName").asText());
+            measurement.setRoom(node.get("room").asText());
             measurement.setBrightness(node.get("brightness").asInt());
             measurement.setTemperature(node.get("temperature").asInt());
             measurement.setDatetime(FORMATTER.parse(date));

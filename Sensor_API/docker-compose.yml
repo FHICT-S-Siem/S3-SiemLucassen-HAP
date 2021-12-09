@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  sensor-api:
+    build: 
+      context: .
+      dockerfile: sensor-api.Dockerfile
+      args:
+        - DB_URL=${DB_URL}
+        - PASSWORD=${PASSWORD}
+        - USERNAME=${USERNAME}
+        - HOST_URL=${HOST_URL}
+        - RMQ_USERNAME=${RMQ_USERNAME}
+        - RMQ_PASSWORD=${RMQ_PASSWORD}
+    image: siemvm2:5000/sensor-api:latest
+    ports:
+      - "4444:4444"

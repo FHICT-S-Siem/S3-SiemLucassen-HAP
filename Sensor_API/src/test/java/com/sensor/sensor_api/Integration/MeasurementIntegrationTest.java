@@ -42,7 +42,7 @@ public class MeasurementIntegrationTest {
 
         when(roomService.getMeasurementsByRoom(roomName)).thenReturn(java.util.Optional.of(room));
 
-        mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
+        mockMvc.perform(get("/api/v1/rooms/{room}", roomName))
                 .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(room)));
     }
 

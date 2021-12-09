@@ -46,13 +46,13 @@ public class RoomIntegrationTest {
 
     @Test
     void shouldGetMeasurementsByRoomName() throws Exception {
-        String roomName = "Siem";
-        Room room = new Room(1, roomName);
+        String room = "Siem";
+        Room room2 = new Room(1, room);
 
-        when(roomService.getMeasurementsByRoom(roomName)).thenReturn(java.util.Optional.of(room));
+        when(roomService.getMeasurementsByRoom(room)).thenReturn(java.util.Optional.of(room2));
 
-        mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
-                .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(room)));
+        mockMvc.perform(get("/api/v1/rooms/{room}", room))
+                .andDo(print()).andExpect(status().isOk()).andExpect(content().json(convertObjectToJsonString(room2)));
     }
 
     @Test
@@ -84,10 +84,10 @@ public class RoomIntegrationTest {
 
     @Test
     public void shouldReturnExceptionMessage() throws Exception {
-        String roomName = "siem";
-        when(roomService.getMeasurementsByRoom(roomName)).thenThrow(new ApiRequestException("There are no measurements with this room name found"));
+        String room = "siem";
+        when(roomService.getMeasurementsByRoom(room)).thenThrow(new ApiRequestException("There are no measurements with this room name found"));
 
-        mockMvc.perform(get("/api/v1/rooms/{roomName}", roomName))
+        mockMvc.perform(get("/api/v1/rooms/{room}", room))
                 .andDo(print()).andExpect(status().is4xxClientError())
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof ApiRequestException))
                 .andExpect(result -> assertEquals("There are no measurements with this room name found", result.getResolvedException().getMessage()));
