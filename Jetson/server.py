@@ -1,11 +1,14 @@
 from abc import abstractmethod
 from flask import Flask  # Flask web app - http://home:5000
 import pika
+import smbus
 from threading import Thread, Event
 from datetime import datetime
+import unittest
 import json
 import os
 from random import Random
+
 
 class HAPDataProvider(object):
     @abstractmethod
@@ -27,10 +30,19 @@ class RandomDataProvider(HAPDataProvider):
     def get_brightness(self):
         return int(self.rng.uniform(0, 50))
 
+class TestBrightnessConverterToZero(unittest.TestCase):
+    def __init__(self):
+        self.x = 0
+
+    def get_brightness(self):
+        # Compare expected with actual
+        self.assertEqual(get_brightness() ,self.x)
+        
+
+
 # used for the jetson nano with smbus for the SensorHub board
 class SensorDataProvider(HAPDataProvider):
     def __init__(self):
-        import smbus
         self.DEVICE_BUS = 1
         self.DEVICE_ADDR = 0x17
         self.TEMP_REG = 1
@@ -55,6 +67,7 @@ class SensorDataProvider(HAPDataProvider):
     def get_brightness(self):
         light_reg_l = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_L)
         light_reg_h = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_H)
+        print(bin(light_reg_h << 8 | light_reg_l))
         return str(light_reg_h << 8 | light_reg_l)
 
 # data publisher to RabbitMQ
@@ -69,9 +82,9 @@ class SensorDataPublisher(Thread):
       self.channel = self.connection.channel()
       self.channel.queue_declare(queue='sensor_data', durable=True)
   
-  # Publish sensor data every 5 minutes
+  # Publish sensor data every minute
   def run(self):
-      while not self.stopped.wait(60*5):
+      while not self.stopped.wait(60):
           self.publish_sensor_data()
 
   def publish_sensor_data(self):
@@ -104,7 +117,7 @@ def get_temperature():
     return sensor_data_provider.get_temperature()
 
 @app.route("/brightness")
-def get_brightness():
+def get_brightness():    
     return sensor_data_provider.get_brightness()
 
 if __name__ == '__main__':

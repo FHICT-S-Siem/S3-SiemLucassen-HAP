@@ -19,7 +19,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-public class RoomServiceTest {
+class RoomServiceTest {
     @Mock
     private RoomRepository roomRepository;
     private RoomService underTest;
@@ -29,13 +29,13 @@ public class RoomServiceTest {
         underTest = new RoomService(roomRepository);
     }
 
-    @Test
-    void Should_Get_All_Rooms(){
-        // when
-        underTest.getRooms();
-        // then
-        verify(roomRepository).findAll();
-    }
+//    @Test
+//    void Should_Get_All_Rooms(){
+//        // when
+//        underTest.getRooms();
+//        // then
+//        verify(roomRepository).findAll();
+//    }
 
     @Test
     void Should_Create_Room() {

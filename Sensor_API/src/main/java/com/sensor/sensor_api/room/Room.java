@@ -26,7 +26,7 @@ public class Room implements Serializable {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roomName", referencedColumnName = "name")
+    @JoinColumn(name = "room", referencedColumnName = "name")
     private Set<Measurement> measurements;
 
     public Room() {
@@ -68,7 +68,7 @@ public class Room implements Serializable {
     }
 
     public void addMeasurement(Measurement measurement) {
-        measurement.setRoomName(this.name);
+        measurement.setRoom(this.name);
         this.measurements.add(measurement);
     }
 }

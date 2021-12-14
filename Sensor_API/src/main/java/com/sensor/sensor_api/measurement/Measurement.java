@@ -19,7 +19,7 @@ public class Measurement implements Serializable {
             generator = "name_sequence"
     )
     private Integer id;
-    private String roomName;
+    private String room;
     private Integer brightness;
     private Integer temperature;
     private Date datetime;
@@ -28,9 +28,9 @@ public class Measurement implements Serializable {
 
     }
 
-    public Measurement(Integer id, String roomName, Integer brightness, Integer temperature, Date datetime) {
+    public Measurement(Integer id, String room, Integer brightness, Integer temperature, Date datetime) {
         this.id = id;
-        this.roomName = roomName;
+        this.room = room;
         this.brightness = brightness;
         this.temperature = temperature;
         this.datetime = datetime;
@@ -44,12 +44,12 @@ public class Measurement implements Serializable {
         this.id = id;
     }
 
-    public String getRoomName() {
-        return roomName;
+    public String getRoom() {
+        return room;
     }
 
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public Integer getBrightness() {

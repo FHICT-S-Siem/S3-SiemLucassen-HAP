@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Sensor_API</name>
 	<description> Provides data to the front-end and controls authorization and sensor data</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>11</java.version>
 		<sonar.organization>fhict-s-siem</sonar.organization>
@@ -112,8 +113,6 @@
 			<version>2.0.2</version>
 			<scope>test</scope>
 		</dependency>
-
-
     </dependencies>
 
 	<build>
@@ -122,6 +121,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.5.6</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

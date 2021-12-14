@@ -1,5 +1,7 @@
 package com.sensor.sensor_api.room;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,13 +21,15 @@ public class RoomController {
         this.roomService = roomService;
     }
 
-    @GetMapping("/{roomName}")
-    public Optional<Room> getMeasurementsByRoom(@PathVariable("roomName") String roomName) {
-        return roomService.getMeasurementsByRoom(roomName);
+    @GetMapping("/{room}")
+    public Optional<Room> getMeasurementsByRoom(@PathVariable("room") String room) {
+        return roomService.getMeasurementsByRoom(room);
     }
 
     @GetMapping
-    public List<Room> getRooms(){return roomService.getRooms();}
+    public Page<Room> getRooms(Optional<Integer> page, Optional<String> sortBy) {
+        return roomService.getRooms(page, sortBy);
+    }
 
     @PostMapping
     public void createRoom(@RequestBody Room room){ roomService.createRoom(room);}

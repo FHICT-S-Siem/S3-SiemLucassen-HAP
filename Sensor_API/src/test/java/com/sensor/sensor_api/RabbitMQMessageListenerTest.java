@@ -36,7 +36,8 @@ public class RabbitMQMessageListenerTest {
         // Arrange
         Measurement measurement = new Measurement();
         measurement.setDatetime(new Date());
-        measurement.setRoomName("Siem");
+        measurement.setId(1);
+        measurement.setRoom("Siem");
         measurement.setBrightness(5);
         measurement.setTemperature(25);
 

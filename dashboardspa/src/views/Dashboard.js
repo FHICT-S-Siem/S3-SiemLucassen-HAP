@@ -6,11 +6,8 @@ const Dashboard = props => {
     <div>
       <h3>Dashboard View</h3>
       <div>
-        <ul>
-          <li><Room /></li>
-        </ul>
-      </div>
-        
+        <Room/>
+      </div>        
     </div>
   );
 };
