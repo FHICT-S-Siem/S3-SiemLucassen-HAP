@@ -14,7 +14,7 @@ The goal is to have one screen with a small menu for rooms so I can have a globa
   - [Project Board](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/projects/2)
   - [Research](https://github.com/FHICT-S-Owen/DiscordBotManager/blob/research/Research.md)
 
-## Installation and Setup Instructions
+## Setup Instructions
 
 (Keep in mind that you will need an installed Jetson Nano with a Sensorhub for running the scripts)
 
@@ -30,5 +30,5 @@ To Start Server:
 
 To Visit App:
 
-`localhost:3000/rooms`  
+`http://localhost:3000/`  
 
