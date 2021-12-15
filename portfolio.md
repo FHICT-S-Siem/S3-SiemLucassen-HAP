@@ -22,11 +22,10 @@ Home assistant platform is made with React, Java Spring with microservice archit
 
 ## The substantiation for using these technologies
 
-I chose Java over C# simply because I've been coding in C# for a long time, I am eager to learn new languages such as Java so I can diversify my scope and I am certain
-that java would come across my path somehow in the forseeable future. Java is a popular language and provides a clean and efficient object-oriented-based development platform.
-Espacially for this assignment, it's useful because Java is great for running applications that may be distributed among servers and clients in a network. 
+I chose Java over C# simply because I've been coding in C# for a while. I am eager to learn new languages such as Java so I can diversify my scope and I am certain that java would come across my path somehow in the forseeable future. Java is a popular language and provides a clean and efficient object-oriented-based development platform.
+Especially for this assignment, it's useful because Java is great for running applications that may be distributed among servers and clients in a network. 
 
-Spring is the most popular framework for Javs and is most indentified with dependency injection flavor of inversion of control, which I learned last year and am willing to put to use again in this project.
+Spring is the most popular framework for Java and is most indentified with dependency injection flavor of inversion of control, which I learned last year and am willing to put to use again in this project.
 
 I have never finished a solid project with a framework/library in JavaScript before, so I took a look among the most popular frameworks (Vue, Angular, React, Next) and decided which one is the best documentated and simplest framework to learn.
 My main reason for choosing React is because it uses a Vitrual DOM that makes the app run fast in terms of performances and promises a fast learning curve.
