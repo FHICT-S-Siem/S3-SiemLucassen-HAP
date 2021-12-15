@@ -142,3 +142,16 @@ on:
 
 ## Professional
 You act in a professional manner during software development and learning
+
+### Pomodoro
+
+Pomodoro is a time management technique that I got recommended by my teacher. This method breaks up your workday into 25 minute chunks separated by five minute breaks. These intervals are referred to as pomodoros. I gave Pomodoro a try and came to the conclusion that this method really stimulates me to do the most in the given 25 minutes, rather than losing concentration and overthinking a problem without giving it a fresh thought.
+
+The following site was used for Pomodoro:
+- https://pomofocus.io/
+
+### Project board
+
+In my project board I keep track of my user-stories. With labels I indicate if a story is linked to a certain sprint or an enhancement of an existing story. In the description I state the use case, acceptance-criteria and tasks to keep track of the criteria to show what has to be done to complete the story.
+
+<img src="https://i.postimg.cc/vBtrHPTD/project-board-example.png">
