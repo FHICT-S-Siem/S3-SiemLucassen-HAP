@@ -13,3 +13,22 @@ The goal is to have one screen with a small menu for rooms so I can have a globa
   - [Portfolio](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/portfolio.md)
   - [Project Board](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/projects/2)
   - [Research](https://github.com/FHICT-S-Owen/DiscordBotManager/blob/research/Research.md)
+
+## Installation and Setup Instructions
+
+(Keep in mind that you will need an installed Jetson Nano with a Sensorhub for running the scripts)
+
+Clone down this repository. You will need `npm` installed globally on your machine.  
+
+Installation:
+
+`npm install`  
+
+To Start Server:
+
+`npm start`  
+
+To Visit App:
+
+`localhost:3000/rooms`  
+
