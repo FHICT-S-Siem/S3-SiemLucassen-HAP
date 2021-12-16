@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  sensor-api:
+    build: 
+      context: ./Sensor_API/
+      dockerfile: sensor-api.Dockerfile
+      args:
+        - DB_URL=${DB_URL}
+        - PASSWORD=${PASSWORD}
+        - USERNAME=${USERNAME}
+        - HOST_URL=${HOST_URL}
+        - RMQ_USERNAME=${RMQ_USERNAME}
+        - RMQ_PASSWORD=${RMQ_PASSWORD}
+    image: siemvm2:5000/sensor-api:latest
+    # ports:
+    #   - "4444:4444"
+    network_mode: host
+  dashboardspa:
+    build:
+      context: ./dashboardspa/
+      dockerfile: dashboardspa.Dockerfile
+      args:
+      - REACT_APP_AUTH0_DOMAIN=${REACT_APP_AUTH0_DOMAIN}
+      - REACT_APP_AUTH0_CLIENT_ID=${REACT_APP_AUTH0_CLIENT_ID}
+      - REACT_APP_NAME=${REACT_APP_NAME}
+      - REACT_APP_DEV_API_URL=${REACT_APP_DEV_API_URL}
+      - REACT_APP_DEV_HOSTNAME=${REACT_APP_DEV_HOSTNAME}
+    image: siemvm2:5000/dashboardspa:latest
+    # ports:
+    #   - "5555:80"
+    network_mode: host

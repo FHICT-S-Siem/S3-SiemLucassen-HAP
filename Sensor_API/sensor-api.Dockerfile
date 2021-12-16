@@ -18,6 +18,7 @@ ENV HOST_URL=$HOST_URL
 ENV RMQ_USERNAME=$RMQ_USERNAME
 ENV RMQ_PASSWORD=$RMQ_PASSWORD
  
+EXPOSE 4444
 
 #run the spring boot application
 ENTRYPOINT ["java", "-jar","/project/target/Sensor_API-0.0.1-SNAPSHOT.jar"]

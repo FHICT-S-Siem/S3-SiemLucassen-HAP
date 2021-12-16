@@ -3,11 +3,12 @@ from flask import Flask  # Flask web app - http://home:5000
 import pika
 import smbus
 from threading import Thread, Event
-from datetime import datetime
+from datetime import datetime, timedelta
 import unittest
 import json
 import os
 from random import Random
+import locale
 
 
 class HAPDataProvider(object):
@@ -68,7 +69,10 @@ class SensorDataProvider(HAPDataProvider):
         light_reg_l = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_L)
         light_reg_h = self.bus.read_byte_data(self.DEVICE_ADDR, self.LIGHT_REG_H)
         print(bin(light_reg_h << 8 | light_reg_l))
-        return str(light_reg_h << 8 | light_reg_l)
+        val = (light_reg_h << 8 | light_reg_l)
+        if val > 65000:
+            val = 0
+        return str(val)
 
 # data publisher to RabbitMQ
 class SensorDataPublisher(Thread):
@@ -90,7 +94,7 @@ class SensorDataPublisher(Thread):
   def publish_sensor_data(self):
       brightness = self.sensor_data_provider.get_brightness()
       temperature = self.sensor_data_provider.get_temperature()
-      timestamp = str(datetime.now())
+      timestamp = str(datetime.now() + timedelta(hours=1))
       data = {
           'temperature': temperature,
           'brightness': brightness,
@@ -108,9 +112,10 @@ app = Flask(__name__)
 room_name = os.environ.get('ROOM')
 sensor_data_provider = SensorDataProvider()
 
+
 @app.route("/")
 def index():
-    return f"Welcome to the jetson nano sensor hub for {room_name} room!<br>Try:<br>/temperature<br>/brightness"
+    return f"Welcome to the jetson nano sensor hub for {room_name} room {str(datetime.now() + timedelta(hours=1))}!<br>Try:<br>/temperature<br>/brightness"
 
 @app.route("/temperature")
 def get_temperature():

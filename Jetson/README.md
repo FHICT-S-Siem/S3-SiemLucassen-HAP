@@ -9,7 +9,7 @@ run the container on the jetson nano
 ```
 docker pull siemvm2:5000/siemsensor
 docker stop siemsensor || true && docker rm siemsensor || true
-docker run --device /dev/i2c-1 -d --network host -p 5000:5000 --name siemsensor -e "ROOM=siem" siemvm2:5000/siemsensor
+docker run --device /dev/i2c-1 -d --network host --name siemsensor -e "ROOM=siem" siemvm2:5000/siemsensor
 ```
 
 device "/dev/i2c-1" is the SensorHub.

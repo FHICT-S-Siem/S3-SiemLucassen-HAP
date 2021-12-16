@@ -17,6 +17,7 @@ body {
   display: block;
   width: 75vw;
   height: 100vh;
+  margin: 25px;
 }
 
 button {
@@ -99,5 +100,12 @@ li{
 
   .wrap{
     display: grid;
+  }
+
+  .card-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
   }
 }

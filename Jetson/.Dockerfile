@@ -4,6 +4,9 @@ FROM balenalib/jetson-nano-ubuntu-python
 RUN apt-get update
 RUN apt-get install -y build-essential
 
+ENV LANG=nl_NL.UTF-8  
+ENV LC_ALL=nl_NL.UTF-8 
+
 RUN python -m pip install --upgrade pip
 
 # install smbus package for communicating with the sensors and Flask to host webserver.
