@@ -78,6 +78,8 @@ With this service the user is able to login with google, I implemented this feat
 #### Dashboard
 In this dashboard the user is able to see all the measurements for the given room where a jetson nano is mounted. In my case there is a Jetson in my brother's (mario) and in my own room. When a room gets clicked from the side bar, the measurements will be retrieved and shown in a measurement chart and in cards with averages.
 
+[Screenshots coming soon...]
+
 ## Software quality
 You use software tooling and methodology that continuously monitors and improve the software quality during software development
  
