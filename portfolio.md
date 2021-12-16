@@ -42,14 +42,14 @@ The goal is to have one screen with just a small menu for my rooms, so I can hav
 ## C4 Models 
 
 ### C2 Container Diagram
-In this diagram you can see that the user has acces to the dashboardSPA. He has the possibility to Browse all sensordata from the browser when authorized by the  login provider Auth0.
+In this diagram you can see that the homeowner has access to the HAP-dashboard. The homeowner has the possibility to Browse all IOT measurements from the browser when authorized by the login provider Auth0.
 
-![Container diagram](https://user-images.githubusercontent.com/48807736/143461583-e95969fe-f4a4-47aa-9005-43e8e28d0124.png)
+<img src="https://i.postimg.cc/85XyDTzZ/image.png">
 
 ### C3 Component Model
 In this model you can see which services the client uses, if a user makes a request, it goes trough the controller that allows the user to use the sensor data, the data access component will provide the functionality related to signin in and sensor data storage.
 
-![Component Diagram](https://user-images.githubusercontent.com/48807736/143461581-78c8bfb0-980f-42da-92db-fffa8abbcaa7.png)
+<img src="https://i.postimg.cc/7LFRTHkb/image.png">
 
 
 # Learning Outcomes
