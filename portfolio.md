@@ -151,6 +151,20 @@ The following site was used for Pomodoro:
 
 ### Project board
 
-In my project board I keep track of my user-stories. With labels I indicate if a story is linked to a certain sprint or an enhancement of an existing story. In the description I state the use case, acceptance-criteria and tasks to keep track of the criteria to show what has to be done to complete the story.
+In my project board I keep track of my features. With labels I indicate if a feature is linked to a certain sprint, enhancements of an existing story or if help is wanted with a bug. 
+<img src="https://i.postimg.cc/rpnWjWks/image.png">
 
-<img src="https://i.postimg.cc/vBtrHPTD/project-board-example.png">
+In the description of a feature I state the use case, acceptance-criteria and tasks to keep track of the criteria to show what has to be done to complete the story.
+<table>
+ <tr>
+  <td>
+    <img src="https://i.postimg.cc/sDYTcn02/image.png">
+   </td>
+   <td>
+    <img src="https://i.postimg.cc/yxBVSQbZ/image.png"> 
+  </td>
+  <td>
+   <img src="https://i.postimg.cc/mrkxKx0j/image.png">
+  </td>
+ </tr>
+</table>
