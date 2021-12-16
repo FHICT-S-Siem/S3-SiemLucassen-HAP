@@ -32,7 +32,7 @@ function SensorComponent(measurements: Measurement[]) {
   // Sort on measurement date
   measurements2.sort((a, b) => a.datetime.valueOf() - b.datetime.valueOf());
 
-  const dates: string[] = measurements2.map((m) => m.datetime.toLocaleTimeString())
+  const dates: string[] = measurements2.map((m) => m.datetime.toLocaleTimeString('nl-NL'))
   const temps: number[] = measurements2.map((m) => m.temperature)
   const brightness: number[] = measurements2.map((m) => m.brightness)
 

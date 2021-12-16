@@ -12,9 +12,10 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class MeasurementDeserializer extends StdDeserializer<Measurement> {
-    public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); //removed static because of sonarqube bug reliability reasons
+    public final SimpleDateFormat FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", new Locale("nl-NL")); //removed static because of sonarqube bug reliability reasons
 
     public MeasurementDeserializer() {
         this(null);
