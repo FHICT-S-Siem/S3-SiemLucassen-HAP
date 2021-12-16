@@ -1,8 +1,11 @@
-import { useState, useEffect, lazy  } from 'react'
+import { useState, useEffect  } from 'react'
 import api from '../api/Api'
 import Measurement from '../models/Measurement'
 import BrightnessCard from './BrightnessCard';
 import SensorComponent from './SensorComponent'
+import TemperatureCard from './TemperatureCard';
+import '../../src/App.css'
+import './room.css'
 
 function Room(room:string) {
 
@@ -41,9 +44,14 @@ function Room(room:string) {
     }, [roomNameFromClick])
     // const lastMeasurement = roomMeasurements.filter(p => p.datetime).at(-1)?.brightness;
     // const brightness = lastMeasurement ? lastMeasurement : -1;
-    return ([
-        SensorComponent(roomMeasurements),
-        BrightnessCard(lastMeasurement!)]
+    return (
+        [
+        <div className='card-wrapper'>
+            {TemperatureCard(lastMeasurement!)}
+            {BrightnessCard(lastMeasurement!)}
+        </div>,
+        SensorComponent(roomMeasurements)
+        ]
     )
 }
 

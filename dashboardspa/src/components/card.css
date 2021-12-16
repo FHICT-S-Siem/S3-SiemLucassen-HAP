@@ -1,0 +1,18 @@
+.card{
+    height: 186px;
+    width: 209px;
+    background-color: rgba(18, 18, 18, 0.74);
+    color: white;
+
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    line-height: 40px;
+  }
+
+  

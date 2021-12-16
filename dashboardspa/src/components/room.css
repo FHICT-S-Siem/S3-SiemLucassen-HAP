@@ -1,0 +1,6 @@
+.card-wrapper{
+    width: 100%;
+    display: inline-flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+}
