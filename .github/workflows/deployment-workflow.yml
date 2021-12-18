@@ -21,8 +21,8 @@ jobs:
       with:
         ssh_host: ${{ secrets.DOCKER_HOST }}
         ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
-        ssh_public_key: ${{ secrets.DOCKER_SSH_PUBLIC_KEY }}
         ssh_port: ${{ secrets.DOCKER_SSH_PORT }}
+        ssh_user: docker-deploy
         docker_compose_filename: docker-compose.yml
         
 
