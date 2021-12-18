@@ -12,8 +12,6 @@ services:
         - RMQ_USERNAME=${RMQ_USERNAME}
         - RMQ_PASSWORD=${RMQ_PASSWORD}
     image: siemvm2:5000/sensor-api:latest
-    # ports:
-    #   - "4444:4444"
     network_mode: host
   dashboardspa:
     build:
@@ -26,6 +24,6 @@ services:
       - REACT_APP_DEV_API_URL=${REACT_APP_DEV_API_URL}
       - REACT_APP_DEV_HOSTNAME=${REACT_APP_DEV_HOSTNAME}
     image: siemvm2:5000/dashboardspa:latest
-    # ports:
-    #   - "5555:80"
+    volumes:
+    - certs-volume:/certs
     network_mode: host
