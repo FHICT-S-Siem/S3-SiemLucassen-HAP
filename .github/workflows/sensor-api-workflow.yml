@@ -2,8 +2,7 @@ name: "sensor api"
 on: 
   workflow_dispatch:
   push:
-    branches:
-      - develop
+    branches: [ develop ]
     paths:
       - Sensor_API/**
 defaults: 
