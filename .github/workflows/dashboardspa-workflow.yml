@@ -1,11 +1,11 @@
 name: dashboardspa CI
 
 on:
+  workflow_dispatch:
   push:
-    branches: Develop
+    branches: [develop]
     paths:
       - "dashboardspa/**"
-  workflow_dispatch:
 
 jobs:
   analyze:
