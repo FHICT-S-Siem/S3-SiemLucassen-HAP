@@ -27,3 +27,5 @@ services:
     volumes:
     - certs-volume:/certs
     network_mode: host
+volumes:
+  certs-volume:
