@@ -36,7 +36,8 @@ public class MeasurementDeserializer extends StdDeserializer<Measurement> {
             measurement.setBrightness(node.get("brightness").asInt());
             measurement.setTemperature(node.get("temperature").asInt());
             measurement.setDatetime(FORMATTER.parse(date));
-        } catch (ParseException e) {
+        }
+        catch (ParseException e) {
             if (measurement.getDatetime() == null)
                 measurement.setDatetime(new Date(Long.parseLong(date)));
             else
