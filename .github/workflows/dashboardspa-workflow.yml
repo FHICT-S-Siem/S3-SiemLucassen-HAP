@@ -30,7 +30,7 @@ jobs:
       uses: SonarSource/sonarcloud-github-action@master
       with:
         args: >
-          -Dsonar.organization=FHICT-S-Siem 
+          -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_dashboardspa
           -Dsonar.sources=dashboardspa/
       env:
