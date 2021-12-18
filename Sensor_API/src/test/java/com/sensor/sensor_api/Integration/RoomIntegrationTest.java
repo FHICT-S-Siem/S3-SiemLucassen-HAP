@@ -107,7 +107,8 @@ public class RoomIntegrationTest {
         try {
             ObjectMapper mapper = new ObjectMapper();
             return mapper.writeValueAsString(room);
-        } catch (JsonProcessingException e) {
+        }
+        catch (JsonProcessingException e) {
             e.printStackTrace();
             throw new RuntimeException();
         }
