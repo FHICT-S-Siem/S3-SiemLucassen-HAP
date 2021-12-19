@@ -28,10 +28,11 @@ jobs:
       uses: github/codeql-action/analyze@v1
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
           -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_dashboardspa
           -Dsonar.sources=dashboardspa/
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
