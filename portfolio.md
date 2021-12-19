@@ -15,9 +15,9 @@ Home assistant platform is made with React, Java Spring with microservice archit
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
    - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1-You-design-and-build-user-friendly-full-stack-web-applications)
-   - [Outcome 2: Tooling and methodology](#Tooling-and-methodology)
-   - [Outcome 3: Design and implement (release process)](#Design-and-implement-(release-process))
-   - [Outcome 4: Professional manner](#Professional-manner)
+   - [Outcome 2: Tooling and methodology](#Outcome-2-Tooling-and-methodology)
+   - [Outcome 3: Design and implement (release process)](#Outcome-3-Design-and-implement-(release-process))
+   - [Outcome 4: Professional manner](#Outcome-4-Professional-manner)
 
 
 ## The substantiation for using these technologies
@@ -80,7 +80,7 @@ In this dashboard the user is able to see all the measurements for the given roo
 
 <img src="https://i.postimg.cc/9XnsV3XN/image.png">
 
-## Outcome 2: Tooling and methodology
+## Outcome 2 Tooling and methodology
 You use software tooling and methodology that continuously monitors and improve the software quality during software development
  
 #### Testing
@@ -121,7 +121,7 @@ When clicking on 'why is this an issue?' it gives you a reasoning for the bug.
 
 <img src="https://i.postimg.cc/2Swg0n28/Sonarcloud-reasoning.png">
 
-## Outcome 3: Design and implement (release process)
+## Outcome 3 Design and implement (release process)
 You design and implement a semi automated software release process that matches the needs of the project context
 
 CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud.
@@ -162,7 +162,7 @@ First of all I made evironments to describe a general deployments target as seen
  - Nginx...
 
 
-## Outcome 4: Professional manner
+## Outcome 4 Professional manner
 You act in a professional manner during software development and learning
 
 ### Pomodoro
