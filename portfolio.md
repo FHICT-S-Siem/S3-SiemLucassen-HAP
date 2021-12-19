@@ -14,10 +14,10 @@ Home assistant platform is made with React, Java Spring with microservice archit
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
-   - [Web Application](#Web-Application)
-   - [Software quality](#Software-quality)
-   - [CICD](#CICD)
-   - [Professional](#Professional)
+   - [Outcome 1: You design and build user friendly full stack web applications](#You-design-and-build-user-friendly-full-stack-web-applications)
+   - [Outcome 2: Tooling and methodology](#Tooling-and-methodology)
+   - [Outcome 3: Design and implement (release process)](#Design-and-implement-(release-process))
+   - [Outcome 4: Professional manner](#Professional-manner)
 
 
 ## The substantiation for using these technologies
@@ -55,7 +55,7 @@ In this model you can see which services the client uses, if a user makes a requ
 # Learning Outcomes
 The following are the learning outcomes I need to accomplish in semester 3.
 
-## Web Application
+## Outcome 1: You design and build user friendly full stack web applications
 You design and build user friendly full stack web applications
 
 #### Design
@@ -80,7 +80,7 @@ In this dashboard the user is able to see all the measurements for the given roo
 
 <img src="https://i.postimg.cc/9XnsV3XN/image.png">
 
-## Software quality
+## Outcome 2: Tooling and methodology
 You use software tooling and methodology that continuously monitors and improve the software quality during software development
  
 #### Testing
@@ -109,7 +109,9 @@ I wrote my integration tests with [MockMVC](https://howtodoinjava.com/spring-boo
 
 #### Code coverage
 
-Whith Sonarcloud I can continously monitor code quality during my development. Sonarcloud analyzes my code everytime I push to my develop branch. (You can change these settings in your [workflow](https://docs.github.com/en/actions/quickstart))
+Whith [Sonarcloud](https://sonarcloud.io/projects) I can continously monitor code quality during my development. Sonarcloud analyzes my code everytime I push to my develop branch. (You can change these settings in your [workflow](https://docs.github.com/en/actions/quickstart))
+
+![image](https://user-images.githubusercontent.com/48807736/146692355-b7cac62b-0464-429f-9714-c0a59b231c29.png)
 
 When you get your overview of bugs, the bugs will be graded by reliability. In my case I left the Service testing class on public.<br>
 
@@ -119,12 +121,15 @@ When clicking on 'why is this an issue?' it gives you a reasoning for the bug.
 
 <img src="https://i.postimg.cc/2Swg0n28/Sonarcloud-reasoning.png">
 
-## CICD
+## Outcome 3: Design and implement (release process)
 You design and implement a semi automated software release process that matches the needs of the project context
 
 CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud.
 
-### Automatic testing
+### CI
+
+
+...
 
 By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests everytime I push to the develop branch. 
 
@@ -139,9 +144,25 @@ on:
       - Sensor_API/**
 ```
 
+### CD
 
 
-## Professional
+
+#### Secure deployment
+
+First of all I made evironments to describe a general deployments target as seen below. I configured the environments with protection rules and secrets. My deployments workflow will only pass if it meets all my protection rules.
+
+![image](https://user-images.githubusercontent.com/48807736/146693344-61bcb304-9ec7-4ad2-a3ff-f33a2277e4a0.png)
+
+
+ - *Build(Develop)*: The build environment scans the services with sonarcloud, builds and tests my maven project, setting things up for approval.
+
+ - *Production*: After being approved by me, the dockercompose file executes a command to deploy the microservices with Docker on my server: siemvm2.
+
+ - Nginx...
+
+
+## Outcome 4: Professional manner
 You act in a professional manner during software development and learning
 
 ### Pomodoro
