@@ -124,14 +124,19 @@ When clicking on 'why is this an issue?' it gives you a reasoning for the bug.
 ## Outcome 3: Design and implement (release process)
 You design and implement a semi automated software release process that matches the needs of the project context
 
-CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud.
+CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud. 
 
-### CI
+First of all I made evironments to describe a general deployments target as seen below. I configured the environments with protection rules and secrets. My deployment-workflow will only pass if it meets all my protection rules.
 
+![image](https://user-images.githubusercontent.com/48807736/146693344-61bcb304-9ec7-4ad2-a3ff-f33a2277e4a0.png)
 
-...
+ - *Build(Develop)*: The build environment scans the services with sonarcloud, builds and tests my maven project, setting things up for approval.
 
-By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests everytime I push to the develop branch. 
+ - *Production*: After being approved by me, the dockercompose file executes a command to deploy the microservices with Docker on my server: siemvm2.
+
+### Setting up the build environment
+
+By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests. In this case the workflow builds for the sensor api, everytime I push to the develop branch. 
 
 ```yml
 name: "sensor api"
@@ -144,20 +149,40 @@ on:
       - Sensor_API/**
 ```
 
-### CD
+To test the tests in maven we first have to setup the java version (in my case JDK 11) after that we build and run the tests with the following commands:
+
+```yml
+  - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+           java-version: '11'
+           distribution: 'adopt'
+  - name: Build and test project with Maven
+        run: mvn -B test --file pom.xml
+```
+
+I added a sonar token to my environment secrets and a project key refrencing to my sonarcloud projects, to make use of Sonarcloud. First we cache the sonarcloud packages so we don't continuesly have to install these. After we refrence to the github token, sonar token and projectkey.
+
+```yml
+- name: Cache SonarCloud packages
+    uses: actions/cache@v1
+    with:
+      path: ~/.sonar/cache
+      key: ${{ runner.os }}-sonar
+      restore-keys: ${{ runner.os }}-sonar
+- name: Build and analyze
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=FHICT-S-Siem_S3-SiemLucassen-HAP
+
+```
+### Secure deployment in the production environment
+
+After the build environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow.
 
 
-
-#### Secure deployment
-
-First of all I made evironments to describe a general deployments target as seen below. I configured the environments with protection rules and secrets. My deployments workflow will only pass if it meets all my protection rules.
-
-![image](https://user-images.githubusercontent.com/48807736/146693344-61bcb304-9ec7-4ad2-a3ff-f33a2277e4a0.png)
-
-
- - *Build(Develop)*: The build environment scans the services with sonarcloud, builds and tests my maven project, setting things up for approval.
-
- - *Production*: After being approved by me, the dockercompose file executes a command to deploy the microservices with Docker on my server: siemvm2.
+ - Docker registry...
 
  - Nginx...
 
