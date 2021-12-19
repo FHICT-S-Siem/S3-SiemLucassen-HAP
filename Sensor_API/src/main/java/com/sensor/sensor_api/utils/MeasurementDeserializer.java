@@ -24,7 +24,6 @@ public class MeasurementDeserializer extends StdDeserializer<Measurement> {
     public MeasurementDeserializer(Class<?> vc) {
         super(vc);
     }
-
     @Override
     public Measurement deserialize(JsonParser parser, DeserializationContext deserializer) throws IOException {
         Measurement measurement = new Measurement();
