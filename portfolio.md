@@ -14,7 +14,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
-   - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1:-You-design-and-build-user-friendly-full-stack-web-applications)
+   - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1-You-design-and-build-user-friendly-full-stack-web-applications)
    - [Outcome 2: Tooling and methodology](#Tooling-and-methodology)
    - [Outcome 3: Design and implement (release process)](#Design-and-implement-(release-process))
    - [Outcome 4: Professional manner](#Professional-manner)
@@ -55,7 +55,7 @@ In this model you can see which services the client uses, if a user makes a requ
 # Learning Outcomes
 The following are the learning outcomes I need to accomplish in semester 3.
 
-## Outcome 1: You design and build user friendly full stack web applications
+## Outcome 1 You design and build user friendly full stack web applications
 You design and build user friendly full stack web applications
 
 #### Design
