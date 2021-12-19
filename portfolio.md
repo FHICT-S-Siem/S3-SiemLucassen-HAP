@@ -14,7 +14,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
  - Learning Outcomes
-   - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1:-You-design-and-build-user-friendly-full-stack-web-applications)
+   - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1-You-design-and-build-user-friendly-full-stack-web-applications)
    - [Outcome 2: Tooling and methodology](#Outcome-2:-Tooling-and-methodology)
    - [Outcome 3: Design and implement (release process)](#Outcome-3:-Design-and-implement-release-process)
    - [Outcome 4: Professional manner](#Outcome-4:-Professional-manner)
