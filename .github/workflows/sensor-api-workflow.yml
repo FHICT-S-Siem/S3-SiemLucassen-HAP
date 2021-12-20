@@ -46,4 +46,4 @@ jobs:
           -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API
           -Dsonar.sources=.
-
+          -Dsonar.java.binaries=**/target/classes 
