@@ -18,6 +18,9 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
       
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
@@ -27,8 +30,8 @@ jobs:
     - name: Autobuild
       uses: github/codeql-action/autobuild@v1
       
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+#     - name: Perform CodeQL Analysis
+#       uses: github/codeql-action/analyze@v1
       
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
