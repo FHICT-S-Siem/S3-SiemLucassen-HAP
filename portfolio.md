@@ -126,13 +126,14 @@ You design and implement a semi automated software release process that matches 
 
 CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud. 
 
-First of all I made evironments to describe a general deployments target as seen below. I configured the environments with protection rules and secrets. My deployment-workflow will only pass if it meets all my protection rules.
+I made GitHub secret evironments to seperate build(development) and deployment workflows as seen below. <br/> 
+I configured these environments with protection rules and secrets. The workflows will only pass once all steps are succesfully completed.
 
 ![image](https://user-images.githubusercontent.com/48807736/146693344-61bcb304-9ec7-4ad2-a3ff-f33a2277e4a0.png)
 
- - *Build(Develop)*: The build environment scans the services with sonarcloud, builds and tests my maven project, setting things up for approval.
+ - *Build(Develop)*: The build environment scans the services with sonarcloud, builds and tests the maven project and sets things up for approval.
 
- - *Production*: After being approved by me, the dockercompose file executes a command to deploy the microservices with Docker on my server: siemvm2.
+ - *Production*: After manually approving the production deployment workflow, the docker-compose job executes the build and up docker-compose command to deploy the services using Docker on my home-server: siemvm2.
 
 ### Setting up the build environment
 
@@ -160,6 +161,8 @@ To test the tests in maven we first have to setup the java version (in my case J
   - name: Build and test project with Maven
         run: mvn -B test --file pom.xml
 ```
+![image](https://user-images.githubusercontent.com/48807736/146839056-35406cb4-7e6b-44d5-a043-6af4a70e53aa.png)
+
 
 I added a sonar token to my environment secrets and a project key refrencing to my sonarcloud projects, to make use of Sonarcloud. First we cache the sonarcloud packages so we don't continuesly have to install these. After we refrence to the github token, sonar token and projectkey.
 
@@ -170,24 +173,30 @@ I added a sonar token to my environment secrets and a project key refrencing to 
       path: ~/.sonar/cache
       key: ${{ runner.os }}-sonar
       restore-keys: ${{ runner.os }}-sonar
-- name: Build and analyze
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=FHICT-S-Siem_S3-SiemLucassen-HAP
-
+      
+- name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with: 
+        args: >
+          -Dsonar.organization=fhict-s-siem
+          -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API          
+          -Dsonar.java.binaries=Sensor_API/target/classes 
+          -Dsonar.sources=Sensor_API/src/main/java/
 ```
-### Secure deployment in the production environment
+![image](https://user-images.githubusercontent.com/48807736/146838966-819ce763-0009-4838-bde1-b7607cda664c.png)
 
-After the build environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow. 
+### Deployment in the production environment
+
+After the production environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow. 
 
  ![image](https://user-images.githubusercontent.com/48807736/146750948-b9414ff9-2d36-4f9c-9dab-308523bfce62.png)
 
-
- - Docker registry...
-
-
-
+After the docker-compose build and up command the services get deployed on the Docker registry in the server. <br/>
+Here is a visual representation of the deployment flow.
+![CI_CD-workflowDiagram](https://user-images.githubusercontent.com/48807736/146838084-fc3f43d9-9843-4837-be24-a9f99fddf58f.png)
 
 ## Outcome 4: Professional manner
 You act in a professional manner during software development and learning
