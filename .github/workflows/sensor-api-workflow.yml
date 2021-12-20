@@ -5,9 +5,9 @@ on:
     branches: [ develop ]
     paths:
       - Sensor_API/**
-# defaults: 
-#   run: 
-#     working-directory: Sensor_API
+defaults: 
+  run: 
+    working-directory: Sensor_API
 
 jobs:
   build:
@@ -45,4 +45,5 @@ jobs:
         args: >
           -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API
-          -Dsonar.sources=Sensor_API/
+          -Dsonar.sources=.
+
