@@ -179,12 +179,14 @@ I added a sonar token to my environment secrets and a project key refrencing to 
 ```
 ### Secure deployment in the production environment
 
-After the build environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow.
+After the build environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow. 
+
+ ![image](https://user-images.githubusercontent.com/48807736/146750948-b9414ff9-2d36-4f9c-9dab-308523bfce62.png)
 
 
  - Docker registry...
 
- - Nginx...
+
 
 
 ## Outcome 4: Professional manner
