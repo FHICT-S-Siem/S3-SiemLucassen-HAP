@@ -30,8 +30,9 @@ jobs:
     - name: Autobuild
       uses: github/codeql-action/autobuild@v1
       
-#     - name: Perform CodeQL Analysis
-#       uses: github/codeql-action/analyze@v1
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
+
       
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
@@ -43,4 +44,3 @@ jobs:
           -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_dashboardspa
           -Dsonar.sources=dashboardspa/
-      

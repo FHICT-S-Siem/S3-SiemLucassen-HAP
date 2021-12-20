@@ -45,4 +45,5 @@ jobs:
         args: >
           -Dsonar.organization=fhict-s-siem
           -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API
-          -Dsonar.sources=Sensor_API/
+          -Dsonar.sources=.
+
