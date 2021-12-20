@@ -186,6 +186,8 @@ I added a sonar token to my environment secrets and a project key refrencing to 
           -Dsonar.java.binaries=Sensor_API/target/classes 
           -Dsonar.sources=Sensor_API/src/main/java/
 ```
+![image](https://user-images.githubusercontent.com/48807736/146839408-494a8604-e85f-40ec-96db-55afd724c9e1.png)
+
 ![image](https://user-images.githubusercontent.com/48807736/146838966-819ce763-0009-4838-bde1-b7607cda664c.png)
 
 ### Deployment in the production environment
