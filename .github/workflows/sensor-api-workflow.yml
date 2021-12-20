@@ -37,15 +37,19 @@ jobs:
       run: mvn -B test --file pom.xml
       
     - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with: 
-        args: >
-          -Dsonar.organization=fhict-s-siem
-          -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API          
-          -Dsonar.java.binaries=target/classes 
-          -Dsonar.sources=src/main/java/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API
+#       uses: sonarsource/sonarcloud-github-action@master
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#       with: 
+#         args: >
+#           -Dsonar.organization=fhict-s-siem
+#           -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API          
+#           -Dsonar.java.binaries=target/classes 
+#           -Dsonar.sources=src/main/java/
 #     run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=fhict-s-siem -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API
         
