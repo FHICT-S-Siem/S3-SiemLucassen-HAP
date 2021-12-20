@@ -15,7 +15,6 @@ public class RabbitMQConfig {
 
     private final MeasurementRepository measurementRepository;
 
-
     public RabbitMQConfig(MeasurementRepository measurementRepository) {
         this.measurementRepository = measurementRepository;
     }
