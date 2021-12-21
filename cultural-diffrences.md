@@ -53,14 +53,46 @@ To my understanding dutch people are quite upfront and honest which sometimes le
 Sometimes dutch people think they are just being honest but they come across as if they're being bold. <br>
 Most dutch people love sports such as voetball(soccer) and love to ride their bike to their office or college.
 
-## How would you  act in the future when you know that you need to communicate or collaborate with a person from another culture?
+## How would you act in the future when you know that you need to communicate or collaborate with a person from another culture?
 When I meet new people I would slowly work my way into their background and be interested but not too exaggerated and ask questions general questions, so we could get comfortable to work/talk with eachother. <br>
 I will often ask these general questions whilst on a school-break, sometimes we can relate to one other and that makes the process of adapting to their culture much easier.
-
 
 ## What did I do to improve the group communications with respect to cultural differences? 
 In this semester, my Dutch group-members and me had the opportunity to work with a person who comes from Indonesia. The first lunch-break, we showed him around our local shops and talked about his culture to get introduced. <br>
 I noticed he was well spoken in the English language and told him so. We as a group tried our hardest to always speak English if he was present either in real-life or online.
+
+# Ethics
+Do I think about ethical consequences from the software you make?
+
+## What is ethics in software engineering?
+As stated by (Thomas Owens, 2018)
+> Software engineering ethics are a subset of engineering ethics and professional ethics applied to the design and development of software systems. Engineering ethics and engineering philosophy look at the relationship between the engineer as an individual, his or her employer, the client, and society in general.
+
+## Why is ethics important in software engineering? 
+Ethics should influence software engineers to consider who is affected by their work. To examine if they and their colleagues are treating other human beings with respect also to consider how the public, would view their decisions.
+
+## What do you have to do as a software engineer to address ethical aspects in your work? 
+According to (ACM Ethics, 2018) software engineers should follow ethics in their work in a professional manner. They should be able to follow the following eight principles:
+
+> **PUBLIC** – Software engineers shall act consistently with the public interest. <br>
+**CLIENT AND EMPLOYER** – Software engineers shall act in a manner that is in the best interests of their client and employer    consistent with the public interest. <br><br>
+**PRODUCT** – Software engineers shall ensure that their products and related modifications meet the highest professional standards possible. <br><br>
+**JUDGMENT** – Software engineers shall maintain integrity and independence in their professional judgment. <br><br>
+**MANAGEMENT** – Software engineering managers and leaders shall subscribe to and promote an ethical approach to the management of software development and maintenance. <br><br>
+**PROFESSION** – Software engineers shall advance the integrity and reputation of the profession consistent with the public interest. <br><br>
+**COLLEAGUES** – Software engineers shall be fair to and supportive of their colleagues. <br><br>
+**SELF** – Software engineers shall participate in lifelong learning regarding the practice of their profession and shall promote an ethical approach to the practice of the profession. <br>
+
+Having almost 3-4 years experience as software developer in training I can confirm that I relate to these principles, in a smaller scope. That being that I have only have experience within a safe working-space where I can still make mistakes.
+
+## How do you know that your ethical considerations match with those of other software engineers? 
+By respecting eachothers nature and talk about their view on ethics. If you can't quite agree with someone, you would have to find a middle ground. Reviewing eachothers work and being honest helps a lot with their view of what is right or wrong. This way, we can tell someone is being professional in their job.<br>
+
+## Which ethical aspects play a role in your project? 
+We have to act professional towards our product owners and teachers, as matter of fact it is a learning outcome. We do this by keeping the stakeholders up to date and ask questions when we are stuck on a problem. Furthermore, we  often have feedback-meetings where we discuss the progress and professionalism toward the project. <br>
+
+## Do you foresee ethical conflicts caused by your software? What kind of?  
+As our project being the automisation of a taking the orders, the ethical conflict is that servers in a restaurant would lose their half a part of their job being taking the orders. <br>
 
 # Sources
 
@@ -68,3 +100,5 @@ I noticed he was well spoken in the English language and told him so. We as a gr
  - Nastasha Lane (n.d.). 10 Ways to Overcome the Cultural Barriers for Communication in the Workplace. www.brosix.com. Consulted on 20 december 2021, from https://www.brosix.com/blog/cultural-barriers/
  - Erin Meyer (2014, 6 May). The Culture Map: Breaking Through the Invisible Boundaries of Global Business. Consulted on 20 december 2021
  - Beth (2011, 26 August). Cultural Differences: Not Wearing Street Shoes in the House. www.wisemommies.com. Consulted on 20 december 2021, from https://wisemommies.com/culture-differences-not-wearing-shoes-in-the-house-go-green/
+ - Thomas Owens (2018, 25 september) What are software engineering ethics? www.quora.com. Consulted on 20 december 2021, from https://www.quora.com/What-are-software-engineering-ethics/answer/Thomas-Owens-3
+ - ACM Ethics. (2018, 19 december). Software Engineering Code - ACM Ethics. ACM Ethics - The Official Site of the Association for Computing Machinery’s Committee on Professional Ethics. Geraadpleegd op 19 december 2021, van https://ethics.acm.org/code-of-ethics/software-engineering-code/
