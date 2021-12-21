@@ -11,7 +11,6 @@ import java.util.Set;
 @Entity
 @Table
 public class Room implements Serializable {
-
     @Id
     @SequenceGenerator(
             name = "name_sequence",
