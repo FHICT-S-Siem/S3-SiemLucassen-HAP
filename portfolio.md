@@ -154,12 +154,12 @@ To test the tests in maven we first have to setup the java version (in my case J
 
 ```yml
   - name: Set up JDK 11
-        uses: actions/setup-java@v2
-        with:
-           java-version: '11'
-           distribution: 'adopt'
+    uses: actions/setup-java@v2
+    with:
+       java-version: '11'
+       distribution: 'adopt'
   - name: Build and test project with Maven
-        run: mvn -B test --file pom.xml
+    run: mvn -B test --file pom.xml
 ```
 ![image](https://user-images.githubusercontent.com/48807736/146839056-35406cb4-7e6b-44d5-a043-6af4a70e53aa.png)
 
@@ -168,23 +168,23 @@ I added a sonar token to my environment secrets and a project key refrencing to 
 
 ```yml
 - name: Cache SonarCloud packages
-    uses: actions/cache@v1
-    with:
-      path: ~/.sonar/cache
-      key: ${{ runner.os }}-sonar
-      restore-keys: ${{ runner.os }}-sonar
+  uses: actions/cache@v1
+  with:
+    path: ~/.sonar/cache
+    key: ${{ runner.os }}-sonar
+    restore-keys: ${{ runner.os }}-sonar
       
 - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with: 
-        args: >
-          -Dsonar.organization=fhict-s-siem
-          -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API          
-          -Dsonar.java.binaries=Sensor_API/target/classes 
-          -Dsonar.sources=Sensor_API/src/main/java/
+  uses: sonarsource/sonarcloud-github-action@master
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  with: 
+    args: >
+      -Dsonar.organization=fhict-s-siem
+      -Dsonar.projectKey=S3-SiemLucassen-HAP_Sensor_API          
+      -Dsonar.java.binaries=Sensor_API/target/classes 
+      -Dsonar.sources=Sensor_API/src/main/java/
 ```
 ![image](https://user-images.githubusercontent.com/48807736/146839408-494a8604-e85f-40ec-96db-55afd724c9e1.png)
 
@@ -192,13 +192,27 @@ I added a sonar token to my environment secrets and a project key refrencing to 
 
 ### Deployment in the production environment
 
-After the production environment has been set-up, a pull request may be made which leads to making the approval of the deployment workflow. 
+When merging a new feature to the master (production) branch, the deployment workflow is triggered. However, this deployment workflow has to be manually approved by me (as seen in the figure below), so that this cannot be abused by malicious pull requests.
 
  ![image](https://user-images.githubusercontent.com/48807736/146750948-b9414ff9-2d36-4f9c-9dab-308523bfce62.png)
 
-After the docker-compose build and up command the services get deployed on the Docker registry in the server. <br/>
-Here is a visual representation of the deployment flow.
+To deploy the docker containers using docker-compose on the remote server, I make use of the [docker-compose remote deployment GitHub Action](https://github.com/alex-ac/github-action-ssh-docker-compose). To do this securely, I ensure that the used ssh key is in my environment secrets and that I use a special user on the linux server for deployment with docker. Aptly named, docker-deploy. Under the hood of this GitHub Action, it creates a temporary workspace where the repository is cloned. This latest version of the repository is used to build the docker images with the `docker-compose build` command. Then, it executes the `docker-compose up` command deploying the latest Sensor-API and dashboardspa images as containers on the server.
+
+```yml
+- uses: alex-ac/github-action-ssh-docker-compose@master
+  name: Docker-Compose Remote Deployment
+  with:
+    ssh_host: ${{ secrets.DOCKER_HOST }}
+    ssh_private_key: ${{ secrets.DOCKER_SSH_PRIVATE_KEY }}
+    ssh_port: ${{ secrets.DOCKER_SSH_PORT }}
+    ssh_user: docker-deploy
+    docker_compose_filename: docker-compose.yml
+ ```
+
+The diagram below visualises the deployment workflow.
 ![CI_CD-workflowDiagram](https://user-images.githubusercontent.com/48807736/146838084-fc3f43d9-9843-4837-be24-a9f99fddf58f.png)
+
+![image](https://user-images.githubusercontent.com/48807736/147012393-84b1297a-2b4d-4c2f-a4e5-1b8283c23d1e.png)
 
 ## Outcome 4: Professional manner
 You act in a professional manner during software development and learning
