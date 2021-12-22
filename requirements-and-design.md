@@ -1,15 +1,22 @@
 # UX Research
 
+## Designs
 For my individual project I made a quick design in Figma (shown below) <br>
 ![image](https://user-images.githubusercontent.com/48807736/147019315-d04888ed-698e-4d0c-a3d4-58e3342ad2d6.png)
 
 
 However, I also contributed to the [group-project](https://github.com/FHICT-S-Owen/RestaurantSPA) where I made a usability test of a design I made.
 
-## Usability Testing
 The application is for automating a process of taking orders in a restaurant. Customers can order food on a menu page which I designed along with [Daniel](https://github.com/danielvaswani) in Figma too. <br>
 
 ![image](https://user-images.githubusercontent.com/48807736/147020176-0b87de1d-eb32-4c6e-8092-62aea05e70e5.png)
+
+I also made another design for live-view screen for the kitchen staff to see their order coming in. <br>
+
+![image](https://user-images.githubusercontent.com/48807736/147064414-702ac82e-7066-4752-a2ee-09e2b32fd2da.png)
+
+
+## Usability Testing
 
 We discussed with the teacher to each test different usability testing methods, so we can diversify our scope and see for ourselves what the most approachable method is when it comes to usability testing. <br> <br>
 I made a usability test with the method called [First Click](https://www.hotjar.com/usability-testing/methods/). The issue is labeled with 'good first issue', so it's easily discoverable on the [Github-marketplace](https://github.com/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22). <br> <br>
