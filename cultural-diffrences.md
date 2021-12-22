@@ -83,7 +83,7 @@ According to (ACM Ethics, 2018) software engineers should follow ethics in their
 **COLLEAGUES** – Software engineers shall be fair to and supportive of their colleagues. <br><br>
 **SELF** – Software engineers shall participate in lifelong learning regarding the practice of their profession and shall promote an ethical approach to the practice of the profession. <br>
 
-Having almost 3-4 years experience as software developer in training I can confirm that I relate to these principles, in a smaller scope. That being that I have only have experience within a safe working-space where I can still make mistakes.
+Having almost 3-4 years experience as software developer in training I can confirm that I relate to these principles, in a smaller scope. That being that I only have experience within a safe working-space where I can still make mistakes.
 
 ## How do you know that your ethical considerations match with those of other software engineers? 
 By respecting eachothers nature and talk about their view on ethics. If you can't quite agree with someone, you would have to find a middle ground. Reviewing eachothers work and being honest helps a lot with their view of what is right or wrong. This way, we can tell someone is being professional in their job.<br>
