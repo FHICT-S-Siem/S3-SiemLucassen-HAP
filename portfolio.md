@@ -22,7 +22,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
 
 ## The substantiation for using these technologies
 
-I chose Java over C# simply because I've been coding in C# for a while. I am eager to learn new languages such as Java so I can diversify my scope and I am certain that java would come across my path somehow in the forseeable future. Java is a popular language and provides a clean and efficient object-oriented-based development platform.
+I have chosen Java over C# simply because I've been coding in C# for a while. I am eager to learn new languages such as Java so I can diversify my scope and I am certain that java would come across my path somehow in the forseeable future. Java is a popular language and provides a clean and efficient object-oriented-based development platform.
 Especially for this assignment, it's useful because Java is great for running applications that may be distributed among servers and clients in a network. 
 
 Spring is the most popular framework for Java and is most identified with dependency injection flavour of inversion of control, which I learned last year and am willing to put to use again in this project.
@@ -196,7 +196,7 @@ When merging a new feature to the master (production) branch, the deployment wor
 
  ![image](https://user-images.githubusercontent.com/48807736/146750948-b9414ff9-2d36-4f9c-9dab-308523bfce62.png)
 
-To deploy the docker containers using docker-compose on the remote server, I make use of the [docker-compose remote deployment GitHub Action](https://github.com/alex-ac/github-action-ssh-docker-compose). To do this securely, I ensure that the used SSH-key is in my environment secrets and that I use a user on the Linux server for deployment with docker. Aptly named, docker-deploy. Under the hood of this GitHub Action, it creates a temporary workspace where the repository is cloned. This latest version of the repository is used to build the docker images with the `docker-compose build` command. Then, it executes the `docker-compose up` command deploying the latest Sensor-API and dashboardspa images as containers on the server.
+To deploy the docker containers using docker-compose on the remote server, I make use of the [docker-compose remote deployment GitHub Action](https://github.com/alex-ac/github-action-ssh-docker-compose). To do this securely, I ensure that the used SSH-key is in my environment secrets and that I use a user on the Linux server for deployment with docker; Aptly named, docker-deploy. Under the hood of this GitHub Action, it creates a temporary workspace where the repository is cloned. This latest version of the repository is used to build the docker images with the `docker-compose build` command. Then, it executes the `docker-compose up` command deploying the latest Sensor-API and dashboardspa images as containers on the server.
 
 ```yml
 - uses: alex-ac/github-action-ssh-docker-compose@master
