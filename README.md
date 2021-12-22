@@ -9,11 +9,6 @@ The goal of this project is to have a wall mounted tablet running a dashboard to
 
 The goal is to have one screen with a small menu for rooms so I can have a global view of the measurements of my Jetson Nano's in my home.
 
-## Links
-  - [Portfolio](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/portfolio.md)
-  - [Project Board](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/projects/2)
-  - [Research](https://github.com/FHICT-S-Owen/DiscordBotManager/blob/research/Research.md)
-
 ## Setup Instructions
 
 (Keep in mind that you will need an installed Jetson Nano with a Sensorhub for running the scripts)
@@ -32,3 +27,8 @@ To Visit App:
 
 `http://localhost:3000/`  
 
+## Links regarding learning outcomes for the 3rd Semester
+  - [Portfolio](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/portfolio.md)
+  - [Project Board](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/projects/2)
+  - [Research](https://github.com/FHICT-S-Owen/DiscordBotManager/blob/research/Research.md)
+  - [Requirements and Design](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/Requirements%20and%20Design.md)
