@@ -25,10 +25,10 @@ Home assistant platform is made with React, Java Spring with microservice archit
 I chose Java over C# simply because I've been coding in C# for a while. I am eager to learn new languages such as Java so I can diversify my scope and I am certain that java would come across my path somehow in the forseeable future. Java is a popular language and provides a clean and efficient object-oriented-based development platform.
 Especially for this assignment, it's useful because Java is great for running applications that may be distributed among servers and clients in a network. 
 
-Spring is the most popular framework for Java and is most indentified with dependency injection flavor of inversion of control, which I learned last year and am willing to put to use again in this project.
+Spring is the most popular framework for Java and is most identified with dependency injection flavour of inversion of control, which I learned last year and am willing to put to use again in this project.
 
-I have never finished a solid project with a framework/library in JavaScript before, so I took a look among the most popular frameworks (Vue, Angular, React, Next) and decided which one is the best documentated and simplest framework to learn.
-My main reason for choosing React is because it uses a Vitrual DOM that makes the app run fast in terms of performances and promises a fast learning curve.
+I have never finished a solid project with a framework/library in JavaScript before, so I took a look among the most popular frameworks (Vue, Angular, React, Next) and decided which one is the best documented and simplest framework to learn.
+My main reason for choosing React is because it uses a Virtual DOM that makes the app run fast in terms of performances and promises a fast learning curve.
 
 Python is easy to learn for making scripts for the Jetson Nano. On the Jetson Nano I have a SensorHub, which has all sorts of sensors which I used for the measurements of the temperature and brightness for now.
 In Python I can easily configure and test which sensors to use at a certain interval. Flask is a micro web framework written in Python which I can use for testing if the brightness/temperature are in the correct format/units. 
@@ -47,7 +47,7 @@ In this diagram you can see that the homeowner has access to the HAP-dashboard. 
 <img src="https://i.postimg.cc/85XyDTzZ/image.png">
 
 ### C3 Component Model
-In this model you can see which services the client uses, if a user makes a request, it goes trough the controller that allows the user to use the sensor data, the data access component will provide the functionality related to signin in and sensor data storage.
+In this model you can see which services the client uses, if a user makes a request, it goes through the controller that allows the user to use the sensor data, the data access component will provide the functionality related to signing in and sensor data storage.
 
 <img src="https://i.postimg.cc/7LFRTHkb/image.png">
 
@@ -76,7 +76,7 @@ With this service the user is able to login with google, I implemented this feat
 </table>
 
 #### Dashboard
-In this dashboard the user is able to see all the measurements for the given room where a jetson nano is mounted. In my case there is a Jetson in my brother's (mario) and in my own room. When a room gets clicked from the side bar, the measurements will be retrieved and shown in a measurement chart and in cards with averages.
+In this dashboard the user is able to see all the measurements for the given room where a jetson nano is mounted. In my case there is a Jetson in my brother's (Mario) and in my own room. When a room gets clicked from the side bar, the measurements will be retrieved and shown in a measurement chart and in cards with averages.
 
 <img src="https://i.postimg.cc/9XnsV3XN/image.png">
 
@@ -88,10 +88,10 @@ You use software tooling and methodology that continuously monitors and improve 
 Testing is done to assure the user services run without encountering any problems. For testing methodologies I used Unit, Integration and E2E testing:
 
 *FAQ: What’s the difference between unit and integration testing?*<br>
-Unit testing is focused on testing a single function where as integration testing is focused on combining functions correctly. 
+Unit testing is focused on testing a single function whereas integration testing is focused on combining functions correctly. 
 
 ##### Unit testing 
-I created multiple unit tests to tell the behavior of the functions either with the right input or a test scenario. Before testing the unit, I mocked objects using Mockito to simulate a real scenario. One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. 
+I created multiple unit tests to tell the behaviour of the functions either with the right input or a test scenario. Before testing the unit, I mocked objects using Mockito to simulate a real scenario. One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. 
 
 <table>
  <tr>
@@ -109,7 +109,7 @@ I wrote my integration tests with [MockMVC](https://howtodoinjava.com/spring-boo
 
 #### Code coverage
 
-Whith [Sonarcloud](https://sonarcloud.io/projects) I can continously monitor code quality during my development. Sonarcloud analyzes my code everytime I push to my develop branch. (You can change these settings in your [workflow](https://docs.github.com/en/actions/quickstart))
+With [Sonarcloud](https://sonarcloud.io/projects) I can continuously monitor code quality during my development. Sonarcloud analyses my code every time I push to my develop branch. (You can change these settings in your [workflow](https://docs.github.com/en/actions/quickstart))
 
 ![image](https://user-images.githubusercontent.com/48807736/146692355-b7cac62b-0464-429f-9714-c0a59b231c29.png)
 
@@ -126,8 +126,8 @@ You design and implement a semi automated software release process that matches 
 
 CI/CD is used to automate large parts of the deployment process which speeds up development. We can also let CI/CD handle our testing by adding the service of Sonarcloud. 
 
-I made GitHub secret evironments to seperate build(development) and deployment workflows as seen below. <br/> 
-I configured these environments with protection rules and secrets. The workflows will only pass once all steps are succesfully completed.
+I made GitHub secret environments to separate build(development) and deployment workflows as seen below. <br/> 
+I configured these environments with protection rules and secrets. The workflows will only pass once all steps are successfully completed.
 
 ![image](https://user-images.githubusercontent.com/48807736/146693344-61bcb304-9ec7-4ad2-a3ff-f33a2277e4a0.png)
 
@@ -137,7 +137,7 @@ I configured these environments with protection rules and secrets. The workflows
 
 ### Setting up the build environment
 
-By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests. In this case the workflow builds for the sensor api, everytime I push to the develop branch. 
+By making tests you can check if everything works as it's supposed to, therefore I setup a workflow which runs all my tests. In this case the workflow builds for the sensor api, every time I push to the develop branch. 
 
 ```yml
 name: "sensor api"
@@ -164,7 +164,7 @@ To run the tests in maven we first have to setup the java version (in my case JD
 ![image](https://user-images.githubusercontent.com/48807736/146839056-35406cb4-7e6b-44d5-a043-6af4a70e53aa.png)
 
 
-I added a sonar token to my environment secrets and a project key refrencing to my sonarcloud projects, to make use of Sonarcloud. First we cache the sonarcloud packages so we don't continuesly have to install these. After we refrence to the github token, sonar token and projectkey.
+I added a sonar token to my environment secrets and a project key referencing to my Sonarcloud projects, to make use of Sonarcloud. First we cache the Sonarcloud packages so we don't continuously have to install these. at last, we reference the Github token, sonar token, orginaztion key and project key.
 
 ```yml
 - name: Cache SonarCloud packages
@@ -196,7 +196,7 @@ When merging a new feature to the master (production) branch, the deployment wor
 
  ![image](https://user-images.githubusercontent.com/48807736/146750948-b9414ff9-2d36-4f9c-9dab-308523bfce62.png)
 
-To deploy the docker containers using docker-compose on the remote server, I make use of the [docker-compose remote deployment GitHub Action](https://github.com/alex-ac/github-action-ssh-docker-compose). To do this securely, I ensure that the used ssh key is in my environment secrets and that I use a special user on the linux server for deployment with docker. Aptly named, docker-deploy. Under the hood of this GitHub Action, it creates a temporary workspace where the repository is cloned. This latest version of the repository is used to build the docker images with the `docker-compose build` command. Then, it executes the `docker-compose up` command deploying the latest Sensor-API and dashboardspa images as containers on the server.
+To deploy the docker containers using docker-compose on the remote server, I make use of the [docker-compose remote deployment GitHub Action](https://github.com/alex-ac/github-action-ssh-docker-compose). To do this securely, I ensure that the used SSH-key is in my environment secrets and that I use a user on the Linux server for deployment with docker. Aptly named, docker-deploy. Under the hood of this GitHub Action, it creates a temporary workspace where the repository is cloned. This latest version of the repository is used to build the docker images with the `docker-compose build` command. Then, it executes the `docker-compose up` command deploying the latest Sensor-API and dashboardspa images as containers on the server.
 
 ```yml
 - uses: alex-ac/github-action-ssh-docker-compose@master
@@ -219,7 +219,7 @@ You act in a professional manner during software development and learning
 
 ### Pomodoro
 
-Pomodoro is a time management technique that I got recommended by my teacher. This method breaks up your workday into 25 minute chunks separated by five minute breaks. These intervals are referred to as pomodoros. I gave Pomodoro a try and came to the conclusion that this method really stimulates me to do the most in the given 25 minutes, rather than losing concentration and overthinking a problem without giving it a fresh thought. <br>
+Pomodoro is a time management technique that I got recommended by my teacher. This method breaks up your workday into 25 minute chunks separated by five minute breaks. These intervals are referred to as Pomodoros. I gave Pomodoro a try and came to the conclusion that this method really stimulates me to do the most in the given 25 minutes, rather than losing concentration and overthinking a problem without giving it a fresh thought. <br>
 
 I recommend the following site that I have used for my Pomodoro:
 - https://pomofocus.io/
