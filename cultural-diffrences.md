@@ -54,7 +54,7 @@ Sometimes dutch people think they are just being honest but they come across as 
 Most dutch people love sports such as voetball(soccer) and love to ride their bike to their office or college.
 
 ## How would you act in the future when you know that you need to communicate or collaborate with a person from another culture?
-When I meet new people I would slowly work my way into their background and be interested but not too exaggerated and ask questions general questions, so we could get comfortable to work/talk with eachother. <br>
+When I meet new people I would slowly work my way into their background and be interested but not too exaggerated and ask general questions, so we could get comfortable to work/talk with eachother. <br>
 I will often ask these general questions whilst on a school-break, sometimes we can relate to one other and that makes the process of adapting to their culture much easier.
 
 ## What did I do to improve the group communications with respect to cultural differences? 
