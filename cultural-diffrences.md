@@ -59,7 +59,10 @@ I will often ask these general questions whilst on a school-break, sometimes we 
 
 ## What did I do to improve the group communications with respect to cultural differences? 
 In this semester, my Dutch group-members and me had the opportunity to work with a person who comes from Indonesia. The first lunch-break, we showed him around our local shops and talked about his culture to get introduced. <br>
-I noticed he was well spoken in the English language and told him so. We as a group tried our hardest to always speak English if he was present either in real-life or online.
+I noticed he was well spoken in the English language and told him so. We as a group tried our hardest to always speak English if he was present either in real-life or online. <br><br>
+
+I could tell when he wouldn't understand things, and try to notify the group about it that this person is not on the same level. Sometimes body language is also an indication of whether he is following the conversation with the group. I noticed, when we were talking online he would often avoid confrontation, though he is quite emotionally expressive. To my understanding he would find jokes made up by the team funny and laugh expressively, but would rather not make one of his own to avoid confrontation. <br>
+
 
 # Ethics
 Do I think about ethical consequences from the software you make?
