@@ -92,7 +92,32 @@ By respecting eachothers nature and talk about their view on ethics. If you can'
 We have to act professional towards our product owners and teachers, as matter of fact it is a learning outcome. We do this by keeping the stakeholders up to date and ask questions when we are stuck on a problem. Furthermore, we  often have feedback-meetings where we discuss the progress and professionalism toward the project. <br>
 
 ## Do you foresee ethical conflicts caused by your software? What kind of?  
-As our project being the automisation of a taking the orders, the ethical conflict is that servers in a restaurant would lose half a part of their job being taking the orders. <br>
+
+*For the next analysis I used the **TICT Tool** provided by Fontys (Semester 3, 2021, 22th of December), which helps evaluate the impact of the application:*
+
+**Possible Stakeholders & Human values**: <br>
+As our project being the automisation of a taking the orders, the ethical conflict is that servers in a restaurant would lose half a part of their job being taking the orders. <br><br>
+
+**Privacy**: <br>
+Me and my team consider the privacy of other people by securing the application. We make sure that QR-codes that are generated for each table aren't available for the public to manipulate. Therefore nobody but the people at the table can use the QR-code to order their food. <br><br>
+
+**Data**: <br>
+We make use of an architecture to where the scalability of the application is usable for up to ~250 restaurants. The data transferred would be the orders and along with the inventory management, they are used properly by a display (live-view) screen for the kitchen staff to look at and modify. <br><br>
+
+**Future impact**:
+I think this is a small step towards the future, automising is part of our generations thought; <br>
+In a utopian scenario would be that all the servers still have jobs whilst the better part of the business-processes are automated. <br>
+In a dystopian scenario this would get out of control to where the restaurant owners have to fire employees because of the automated jobs the applications provide. <br><br>
+
+**Fairness & Bad actors**:
+In my opinion this product would be fair depending on what the restaurant owners do with the help provided by the application. <br>
+If the restaurant owners invest into more flexibility for the kitchen staff and servers to work with, yes it would be fair. <br>
+If they decide to do nothing and eventually fire employees because of this application than it wouldn't be quite fair. <br><br>
+
+**Transparency**:
+
+I am fully aware what the architecture entails and what the limits are. Knowing what the limits are gives us a great estimate how long this project will take. <br>
+If there was no limit, then it would be hard to pin-point a estimated delivery for the product owner. <br><br>
 
 # Sources
 
