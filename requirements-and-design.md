@@ -12,7 +12,7 @@ The application is for automating a process of taking orders in a restaurant. Cu
 ![image](https://user-images.githubusercontent.com/48807736/147020176-0b87de1d-eb32-4c6e-8092-62aea05e70e5.png)
 
 We discussed with the teacher to each test different usability testing methods, so we can diversify our scope and see for ourselves what the most approachable method is when it comes to usability testing. <br> <br>
-I made a usability test with the method called [First Click](https://www.hotjar.com/usability-testing/methods/).  <br>
+I made a usability test with the method called [First Click](https://www.hotjar.com/usability-testing/methods/). The issue is labeled with 'good first issue', so it's easily discoverable on the Github-marketplace. <br>
 [Dirk](https://github.com/DirkLemmen/) opened up a couple issues for me and my team-members to contribute our [usability tests](https://github.com/DirkLemmen/Researches/issues/10). <br>
 
 - https://github.com/DirkLemmen/Researches/issues/10
