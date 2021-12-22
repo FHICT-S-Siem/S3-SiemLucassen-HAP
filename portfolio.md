@@ -59,12 +59,8 @@ The following are the learning outcomes I need to accomplish in semester 3.
 You design and build user friendly full stack web applications
 
 #### Design
-First of, I made a UI-design in Figma so I have a good reference where to place the components. 
-<table>
- <tr>
-  <td><img src="https://i.postimg.cc/yNdhyn4X/hap-design.png"></td>
- </tr>
-</table>
+First of, I made a UI-design in Figma so I have a good reference where to place the components. <br><br>
+ <img src="https://i.postimg.cc/yNdhyn4X/hap-design.png"></td>
 
 #### Identity service: Auth0
 With this service the user is able to login with google, I implemented this feature so if I ever move houses I could still login with the same account and view my account settings. It is also possible for the user to see their [Auth0](https://auth0.com/) provided information. 
