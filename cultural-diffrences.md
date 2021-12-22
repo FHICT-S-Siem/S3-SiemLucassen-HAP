@@ -51,7 +51,7 @@ My culture being dutch, is eating typical dutch food on a planned time with my f
 The typical dutch person would attend to dutch holidays such as sinterklaas, carnaval, kerstmis(christmas) and nieuw jaarsavond(new years eve). <br>
 To my understanding dutch people are quite upfront and honest which sometimes leads to having cultural diffrences. <br> 
 Sometimes dutch people think they are just being honest but they come across as if they're being bold. <br>
-Most dutch people love sports such as voetball(soccer) and love to ride their bike to their office or college.
+Most dutch people love sports such as voetbal(soccer/football) and love to ride their bike to their office or college.
 
 ## How would you act in the future when you know that you need to communicate or collaborate with a person from another culture?
 When I meet new people I would slowly work my way into their background and be interested but not too exaggerated and ask general questions, so we could get comfortable to work/talk with eachother. <br>
@@ -92,7 +92,7 @@ By respecting eachothers nature and talk about their view on ethics. If you can'
 We have to act professional towards our product owners and teachers, as matter of fact it is a learning outcome. We do this by keeping the stakeholders up to date and ask questions when we are stuck on a problem. Furthermore, we  often have feedback-meetings where we discuss the progress and professionalism toward the project. <br>
 
 ## Do you foresee ethical conflicts caused by your software? What kind of?  
-As our project being the automisation of a taking the orders, the ethical conflict is that servers in a restaurant would lose their half a part of their job being taking the orders. <br>
+As our project being the automisation of a taking the orders, the ethical conflict is that servers in a restaurant would lose half a part of their job being taking the orders. <br>
 
 # Sources
 
