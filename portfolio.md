@@ -36,8 +36,8 @@ In Python I can easily configure and test which sensors to use at a certain inte
 PostgreSQL is an advanced object-relational database that was used for storing the Measurements from the Jetson Nano's per room. 
 
 ## Project description
-The goal of this project is to have a wall mounted tablet running a dashboard to get an overview with measurements for my room.
-The goal is to have one screen with just a small menu for my rooms, so I can have a global view of the more important thing in the home: temperature, lights and a camera.
+The goal of this project is to have dashboard the dashboard running to get an overview with IOT-measurements for my room.
+The goal is to have one screen with a small menu for my rooms, so I can have a global view of the more important thing in the home: temperature, lights (and a other features coming in the future).
 
 ## C4 Models 
 
@@ -150,7 +150,7 @@ on:
       - Sensor_API/**
 ```
 
-To test the tests in maven we first have to setup the java version (in my case JDK 11) after that we build and run the tests with the following commands:
+To run the tests in maven we first have to setup the java version (in my case JDK 11), afterwards we build and run the tests with the following commands:
 
 ```yml
   - name: Set up JDK 11
@@ -219,10 +219,25 @@ You act in a professional manner during software development and learning
 
 ### Pomodoro
 
-Pomodoro is a time management technique that I got recommended by my teacher. This method breaks up your workday into 25 minute chunks separated by five minute breaks. These intervals are referred to as pomodoros. I gave Pomodoro a try and came to the conclusion that this method really stimulates me to do the most in the given 25 minutes, rather than losing concentration and overthinking a problem without giving it a fresh thought.
+Pomodoro is a time management technique that I got recommended by my teacher. This method breaks up your workday into 25 minute chunks separated by five minute breaks. These intervals are referred to as pomodoros. I gave Pomodoro a try and came to the conclusion that this method really stimulates me to do the most in the given 25 minutes, rather than losing concentration and overthinking a problem without giving it a fresh thought. <br>
 
-The following site was used for Pomodoro:
+I recommend the following site that I have used for my Pomodoro:
 - https://pomofocus.io/
+
+<table>
+ <tr>
+  <td>
+   <img src="https://i.postimg.cc/g0c4gtxF/image.png" height=500>
+  </td>
+  <td>
+   <img src="https://i.postimg.cc/tJ9g66r5/image.png" height=500>
+  </td>
+  <td>
+   <img src="https://i.postimg.cc/jdLbFvJf/image.png" height=500>
+  </td>
+ </tr>
+</table>
+
 
 ### Project board
 
