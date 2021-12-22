@@ -31,4 +31,4 @@ To Visit App:
   - [Portfolio](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/portfolio.md)
   - [Project Board](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/projects/2)
   - [Research](https://github.com/FHICT-S-Owen/DiscordBotManager/blob/research/Research.md)
-  - [Requirements and Design](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/Requirements%20and%20Design.md)
+  - [Requirements and Design](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/requirements-and-design.md)
