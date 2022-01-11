@@ -1,4 +1,4 @@
-# Cultural diffrences
+# Cultural differences
 Can I work with people from other cultures? 
 
 ## What is culture? 
