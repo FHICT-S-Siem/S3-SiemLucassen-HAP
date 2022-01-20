@@ -160,7 +160,7 @@ To run the tests in maven we first have to setup the java version (in my case JD
 ![image](https://user-images.githubusercontent.com/48807736/146839056-35406cb4-7e6b-44d5-a043-6af4a70e53aa.png)
 
 
-I added a sonar token to my environment secrets and a project key referencing to my Sonarcloud projects, to make use of Sonarcloud. First we cache the Sonarcloud packages so we don't continuously have to install these. at last, we reference the Github token, sonar token, orginaztion key and project key.
+I added a sonar token to my environment secrets and a project key referencing to my Sonarcloud projects, to make use of Sonarcloud. First we cache the Sonarcloud packages so we don't continuously have to install these. At last, we reference the Github token, sonar token, organization key and project key.
 
 ```yml
 - name: Cache SonarCloud packages
