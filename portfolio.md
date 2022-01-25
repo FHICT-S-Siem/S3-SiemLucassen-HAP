@@ -14,18 +14,17 @@ Home assistant platform is made with React, Java Spring with microservice archit
    - [C4 Models](#C4-Models)
      - [C2 Container Diagram](#C2-Container-Diagram)
      - [C3 Component Model](#C3-Component-Model)
-  - Learning Outcomes
    - [Outcome 1: You design and build user friendly full stack web applications](#Outcome-1-You-design-and-build-user-friendly-full-stack-web-applications)
    - [Outcome 2: Tooling and methodology](#Outcome-2-Tooling-and-methodology)
    - [Outcome 3: Design and implement (release process)](#Outcome-3-Design-and-implement-release-process)
    - [Outcome 4: Professional manner](#Outcome-4-Professional-manner)
  - GP Learning Outcomes
-   - [Outcome 1: Agile method](#Outcome-1:-Agile-method)
-   - [Outcome 2: Business processes](#Outcome-2:-Business-processes)
-   - [Outcome 3: Requirements and design](#Outcome-3:-Requirements-and-design)
-   - [Outcome 4: Cultural differences and ethics](#Outcome-4:-Cultural-differences-and-ethics)
-   - [Outcome 5: Professional](#Outcome-5:-Professional)
-   - [Outcome 6: Web application](#Outcome-6:-Web-application)
+   - [Outcome 1: Agile method](#Outcome-1-Agile-method)
+   - [Outcome 2: Business processes](#Outcome-2-Business-processes)
+   - [Outcome 3: Requirements and design](#Outcome-3-Requirements-and-design)
+   - [Outcome 4: Cultural differences and ethics](#Outcome-4-Cultural-differences-and-ethics)
+   - [Outcome 5: Professional](#Outcome-5-Professional)
+   - [Outcome 6: Web application](#Outcome-6-Web-application)
 
 
 ## The substantiation for using these technologies
