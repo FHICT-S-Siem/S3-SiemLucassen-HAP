@@ -1,4 +1,5 @@
 # Portfolio Semester 3
+## IP Learning Outcomes
 Home assistant platform is made with React, Java Spring with microservice architecture and Python (with RabbitMQ communication) for the Jetson Nano scripts.
 
 
@@ -7,7 +8,7 @@ Home assistant platform is made with React, Java Spring with microservice archit
 [_image-source_](https://www.home-assistant.io/blog/2019/08/06/home-assistant-cast/)
 
 ## Table of contents
- - Portfolio Semester 3
+ - IP Learning Outcomes
    - [The substantiation for using these technologies](#The-substantiation-for-using-these-technologies)
    - [Project description](#Project-description)
    - [C4 Models](#C4-Models)
@@ -18,6 +19,13 @@ Home assistant platform is made with React, Java Spring with microservice archit
    - [Outcome 2: Tooling and methodology](#Outcome-2-Tooling-and-methodology)
    - [Outcome 3: Design and implement (release process)](#Outcome-3-Design-and-implement-release-process)
    - [Outcome 4: Professional manner](#Outcome-4-Professional-manner)
+ - GP Learning Outcomes
+   - [Outcome 1: Agile method](#Outcome-1:-Agile-method)
+   - [Outcome 2: Business processes](#Outcome-2:-Business-processes)
+   - [Outcome 3: Requirements and design](#Outcome-3:-Requirements-and-design)
+   - [Outcome 4: Cultural differences and ethics](#Outcome-4:-Cultural-differences-and-ethics)
+   - [Outcome 5: Professional](#Outcome-5:-Professional)
+   - [Outcome 6: Web application](#Outcome-6:-Web-application)
 
 
 ## The substantiation for using these technologies
@@ -234,7 +242,6 @@ I recommend the following site that I have used for my Pomodoro:
  </tr>
 </table>
 
-
 ### Project board
 
 In my project board I keep track of my features. With labels I indicate if a feature is linked to a certain sprint, enhancements of an existing story or if help is wanted with a bug. 
@@ -254,3 +261,55 @@ In the description of a feature I state the use case, acceptance-criteria and ta
   </td>
  </tr>
 </table>
+
+## GP Learning Outcomes
+
+### Outcome 1: Agile method
+You can implement the software process for your project according to a given agile software development method. <br>
+I showed the teacher that I have proficient knowledge of the agile methodologies by assessing me about SCRUM and XP.
+
+In this semester I Implemented the usage of SCRUM along with the usage of the project board on JIRA. My team had multiple cycles of development (sprints) with 1 cycle containing 3 weeks. We had daily meetings in the morning and also did peer-feedback occasionally, to clear up any problems if needed.
+
+I also tried Extreme Programming (XP) by continuously pair programming with my fellow team-members. <br> Especially Koen and I did this whilst also using the Pomodoro technique which resulted in a steady work-pace. <br> 
+XP and SCRUM are pretty similar with concepts like release planning, daily meetings and retrospect’s etc. With XP, I can ensure the stakeholders that certain problems are looked at with more care by pair programming. This helps speeding up the tasks with the highest priority.
+
+### Outcome 2: Business processes
+You can explain simple business processes and relate them to the development of your software project. <br>
+Dirk and I started by explaining what a business process entails and the relation between business processes and software development. Furthermore, we made a diagram (swimming lanes) in Visio which represents the ordering process of our application before and after the automatization. 
+- [Business processes research](https://github.com/DirkLemmen/Researches/blob/master/Business%20processes.md)
+
+### Outcome 3: Requirements and design
+You translate (non-functional) requirements to extend existing (architectural) designs and can validate them using multiple types of test techniques. <br>
+The teacher agreed upon the proposal of the group, to split up all test methodologies into our own UX research.
+
+Dirk Lemmen made issues for the group, where I made my usability test (First Click):
+- [Requirements and design Research](https://github.com/DirkLemmen/Researches/issues/10)
+
+![image](https://user-images.githubusercontent.com/48807736/151007040-03a7ef2c-a13a-4d9d-92a5-079334cc743a.png)
+
+
+### Outcome 4: Cultural differences and ethics
+You recognize and take into account cultural differences when working with multi-site teams and are aware of ethical aspects in software development. <br>
+For this research I used my experience in cultural differences within the group that im working with, and my general knowledge about it. I read one of the suggested books called The Culture Map and also asked the teacher about the TICT Tool I used in this document.
+- [Culture and Ethics research](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/blob/main/cultural-differences.md)
+
+### Outcome 5: Professional
+You act in a professional manner during software development and learning. <br>
+Below is shown that I'm able to communicate in a n honest and professional manner towards my group, teachers and stakeholders. We as a group had a lot of ups-and downs, but we made the best of it at the end. <br>
+
+Feedpulse: <br>
+![image](https://user-images.githubusercontent.com/48807736/151007752-1b9167dd-97c9-4d5c-847a-012d62f84469.png)<br>
+
+Stakeholder-communication: <br>
+![image](https://user-images.githubusercontent.com/48807736/151008539-b91a5ef5-3f4e-4c17-a587-6ab063276b30.png)
+
+
+### Outcome 6: Web application
+You design and build user-friendly, full-stack web applications. <br>
+I made sure to make a list of my individual contribution every sprint, so the teacher is up-to date about my contribution to the project. <br>
+
+- [JIRA SCRUM Project Board](https://fontysict.atlassian.net/jira/software/projects/SCRUM/boards/1)
+- [UX-Tests](https://github.com/DirkLemmen/Researches/issues?q=is%3Aopen+is%3Aissue) <br>
+
+[Siem Lucassen Individual contribution_Final.pdf](https://github.com/FHICT-S-Siem/S3-SiemLucassen-HAP/files/7934992/Siem.Lucassen.Individual.contribution_Final.pdf)
+
